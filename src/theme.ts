@@ -136,6 +136,22 @@ const theme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+          borderRadius: 20,
+          border: '1px solid #B50303',
+          color: '#B50303',
+        },
+        icon: {
+          color: '#B50303',
+        },
+        select: {
+          padding: '6px 14px',
+        },
+      },
+    },
   },
 });
 
