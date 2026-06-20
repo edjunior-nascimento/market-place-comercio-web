@@ -1,0 +1,31 @@
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { CaixaPage } from "./pages/CaixaPage";
+import { MaisPage } from "./pages/MaisPage";
+import { PedidosPage } from "./pages/PedidosPage";
+import { ProdutosPage } from "./pages/ProdutosPage";
+import { UsuarioPage } from "./pages/UsuarioPage";
+import { LoginPage } from "./pages/LoginPage";
+import { MainComponent } from "./components/layouts/MainComponent";
+
+function RouterApp() {
+    
+    const location = useLocation();
+
+    return (
+            <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/" element={<LoginPage />}/>
+                    <Route element={<MainComponent />}>
+                        <Route path="/caixa" element={<CaixaPage />}/>
+                        <Route path="/mais" element={<MaisPage />}/>
+                        <Route path="/pedidos" element={<PedidosPage />}/>
+                        <Route path="/produtos" element={<ProdutosPage />}/>
+                        <Route path="/usuario" element={<UsuarioPage />}/>
+                    </Route>
+                </Routes>
+            </AnimatePresence>
+    )
+}
+
+export default RouterApp;
