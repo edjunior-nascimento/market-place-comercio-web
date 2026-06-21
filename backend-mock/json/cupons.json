@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "codigo": "DESCONTO10",
+        "descricao": "10% de desconto em sua compra",
+        "limiteValor": 50,
+        "validoAte": "2024-12-31",
+        "valorDesconto": 10
+    },
+    {
+        "id": 2,
+        "codigo": "FRETEGRATIS",
+        "descricao": "Frete grátis para pedidos acima de R$50",
+        "limiteValor": 50,
+        "validoAte": "2024-12-31",
+        "valorDesconto": 15
+    },
+    {
+        "id": 3,
+        "codigo": "BOASVINDAS",
+        "descricao": "5% de desconto para novos clientes",
+        "limiteValor": 50,
+        "validoAte": "2024-12-31",
+        "valorDesconto": 5
+    }
+]

@@ -1,90 +1,70 @@
-// components/OrderCard.tsx
+import {Box, Button, Card, CardMedia, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from "@mui/material";
+import { useState } from "react";
+import { PedidoType } from "../../../types/pedido.type";
 
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Box, IconButton, Typography } from "@mui/material";
 
 type CardPedidoProps = {
-    codigo: string;
-    cliente: string;
-    quantidadeItens: number;
-    tempo: string;
-    valor: number;
-    onClick?: () => void;
+  pedido: PedidoType;
 };
 
-export default function CardPedido({
-    codigo,
-    cliente,
-    quantidadeItens,
-    tempo,
-    valor,
-    onClick,
-}: CardPedidoProps) {
-    return (
-        <Box
-            onClick={onClick}
-            sx={{
-                backgroundColor: "#fff",
-                borderRadius: 5,
-                p: 1,
-                py: 1.5,
-                cursor: "pointer",
-            }}
-        >
-            <Box
-                sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 2,
-                    borderLeft: "6px solid #1976d2",
-                    pl: 2,
-                }}
-            >
-                <AccessTimeOutlinedIcon sx={{ fontSize: 32, color: "#000",}} />
-                <Box flex={1}>
-                    <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
-                    >
-                        <Typography variant="subtitle1">
-                            {codigo}
-                        </Typography>
 
-                        <Typography variant="subtitle1">
-                            {tempo}
-                        </Typography>
-                    </Box>
+export function CardPedido({ pedido }: CardPedidoProps) {  
+  
+  const [quant, setQuant] = useState(pedido.quantidade);
+  const [valor, setValor] = useState(pedido.precoTotal * pedido.quantidade);
 
-                    <Typography variant="h6">
-                        {cliente}
-                    </Typography>
-
-                    <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
-                    >
-                        <Typography variant="subtitle1">
-                            {quantidadeItens} {quantidadeItens > 1 ? "itens" : "item"}
-                        </Typography>
-
-                        <Typography variant="h6" >
-                            R$
-                            {valor.toLocaleString("pt-BR", {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2,
-                            })}
-                        </Typography>
-                    </Box>
-                </Box>
-
-                <IconButton>
-                    <ChevronRightIcon sx={{ fontSize: 24 }} />
-                </IconButton>
-
-            </Box>
+  return (
+    
+    <Card
+        sx={{
+          width: '100%',
+          borderRadius: 4,
+          backgroundColor: '#ffffffDD',
+          boxShadow: 0,
+          display: 'flex',
+          flexDirection: 'row',
+          padding: '5px',
+          gap: '10px',
+        }}
+      >
+        <Box>
+          <CardMedia
+            component="img"
+            image={pedido.produto.imagens[0]?pedido.produto.imagens[0]:'/sem-img.png'}
+            alt={pedido.produto.nome}
+            sx={{ width: '100px', height: '100px' }}
+          />
         </Box>
-    );
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', padding:'5px', gap:'20px'}}>
+          <Box sx={{display:'flex', flexDirection:'column', gap:'5px'}}>
+            <Typography variant="h6" lineHeight={1.1}>
+              {pedido.produto.nome}
+            </Typography>
+            <Typography variant="subtitle1" lineHeight={1}>
+              {pedido.produto.componentes.join(', ')}
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              p: 0,
+              mt: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography variant="subtitle1">
+              Quant.: {quant}
+            </Typography>
+
+            <Typography variant="h6" fontWeight="bold">
+              {valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            </Typography>
+          </Box>
+        </Box>
+    </Card>
+
+  );
 }

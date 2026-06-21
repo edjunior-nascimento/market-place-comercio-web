@@ -7,6 +7,7 @@ import { ProdutosPage } from "./pages/ProdutosPage";
 import { UsuarioPage } from "./pages/UsuarioPage";
 import { LoginPage } from "./pages/LoginPage";
 import { MainComponent } from "./components/layouts/MainComponent";
+import { CompraPage } from "./pages/CompraPage";
 
 function RouterApp() {
     
@@ -23,6 +24,7 @@ function RouterApp() {
                         <Route path="/produtos" element={<ProdutosPage />}/>
                         <Route path="/usuario" element={<UsuarioPage />}/>
                     </Route>
+                    <Route path="/compra/:compraId" element={<CompraPage />}/>
                 </Routes>
             </AnimatePresence>
     )

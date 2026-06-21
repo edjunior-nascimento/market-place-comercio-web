@@ -1,0 +1,723 @@
+[
+  {
+    "id": "PRT001",
+    "imagens": [
+      "https://exemplo.com/imagens/feijoada.jpg",
+      "https://exemplo.com/imagens/feijoada2.jpg"
+    ],
+    "nome": "Feijoada Completa",
+    "descricao": "Tradicional feijoada brasileira com acompanhamentos.",
+    "preco": 49.90,
+    "quantidade": 100,
+    "componentes": ["Feijão preto", "Carne seca", "Linguiça", "Arroz", "Farofa", "Couve", "Laranja"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT002",
+    "imagens": [
+      "https://exemplo.com/imagens/strogonoff.jpg"
+    ],
+    "nome": "Strogonoff de Frango",
+    "descricao": "Strogonoff de frango cremoso servido com arroz e batata palha.",
+    "preco": 39.90,
+    "quantidade": 80,
+    "componentes": ["Frango", "Creme de leite", "Champignon", "Arroz", "Batata palha"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT003",
+    "imagens": [
+      "https://exemplo.com/imagens/lasanha.jpg"
+    ],
+    "nome": "Lasanha à Bolonhesa",
+    "descricao": "Lasanha de massa fresca com molho bolonhesa e queijo gratinado.",
+    "preco": 44.90,
+    "quantidade": 60,
+    "componentes": ["Massa", "Molho bolonhesa", "Queijo", "Presunto", "Molho branco"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT004",
+    "imagens": [
+      "https://exemplo.com/imagens/salada.jpg"
+    ],
+    "nome": "Salada Caesar",
+    "descricao": "Salada Caesar com frango grelhado, croutons e molho especial.",
+    "preco": 29.90,
+    "quantidade": 50,
+    "componentes": ["Alface", "Frango grelhado", "Croutons", "Molho Caesar", "Parmesão"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT005",
+    "imagens": [
+      "https://exemplo.com/imagens/pizza.jpg"
+    ],
+    "nome": "Pizza Margherita",
+    "descricao": "Pizza clássica com molho de tomate, mussarela e manjericão.",
+    "preco": 59.90,
+    "quantidade": 40,
+    "componentes": ["Massa", "Molho de tomate", "Mussarela", "Manjericão"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT006",
+    "imagens": [
+      "https://exemplo.com/imagens/sushi.jpg"
+    ],
+    "nome": "Combo Sushi",
+    "descricao": "Combo de sushis variados com 20 peças.",
+    "preco": 69.90,
+    "quantidade": 30,
+    "componentes": ["Arroz", "Salmão", "Alga", "Cream cheese", "Pepino"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT007",
+    "imagens": [
+      "https://exemplo.com/imagens/moqueca.jpg"
+    ],
+    "nome": "Moqueca de Peixe",
+    "descricao": "Moqueca baiana de peixe com leite de coco e azeite de dendê.",
+    "preco": 55.90,
+    "quantidade": 70,
+    "componentes": ["Peixe", "Leite de coco", "Azeite de dendê", "Cebola", "Tomate", "Coentro"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT008",
+    "imagens": [
+      "https://exemplo.com/imagens/fricasse.jpg"
+    ],
+    "nome": "Fricassê de Frango",
+    "descricao": "Fricassê de frango com batata, milho e ervilhas.",
+    "preco": 42.90,
+    "quantidade": 65,
+    "componentes": ["Frango", "Batata", "Milho", "Ervilhas", "Creme de leite"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT009",
+    "imagens": [
+      "https://exemplo.com/imagens/macarrao.jpg"
+    ],
+    "nome": "Macarrão ao Molho Pesto",
+    "descricao": "Macarrão fresco ao molho pesto com parmesão.",
+    "preco": 38.90,
+    "quantidade": 55,
+    "componentes": ["Macarrão", "Molho pesto", "Parmesão", "Pinhão"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT010",
+    "imagens": [
+      "https://exemplo.com/imagens/saladagrega.jpg"
+    ],
+    "nome": "Salada Grega",
+    "descricao": "Salada grega com azeitonas, queijo feta e azeite.",
+    "preco": 32.90,
+    "quantidade": 45,
+    "componentes": ["Tomate", "Pepino", "Cebola", "Azeitonas", "Queijo feta"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT011",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzacalabresa.jpg"
+    ],
+    "nome": "Pizza Calabresa",
+    "descricao": "Pizza com calabresa, cebola e mussarela.",
+    "preco": 62.90,
+    "quantidade": 35,
+    "componentes": ["Massa", "Molho de tomate", "Calabresa", "Cebola", "Mussarela"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT012",
+    "imagens": [
+      "https://exemplo.com/imagens/sashimi.jpg"
+    ],
+    "nome": "Sashimi de Salmão",
+    "descricao": "Sashimi fresco de salmão com wasabi e shoyu.",
+    "preco": 75.90,
+    "quantidade": 25,
+    "componentes": ["Salmão", "Wasabi", "Shoyu"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT013",
+    "imagens": [
+      "https://exemplo.com/imagens/acaraje.jpg"
+    ],
+    "nome": "Acarajé",
+    "descricao": "Acarajé baiano com vatapá e caruru.",
+    "preco": 18.90,
+    "quantidade": 90,
+    "componentes": ["Feijão fradinho", "Cebola", "Vatapá", "Caruru"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT014",
+    "imagens": [
+      "https://exemplo.com/imagens/coxinha.jpg"
+    ],
+    "nome": "Coxinha de Frango",
+    "descricao": "Coxinha de frango com recheio cremoso.",
+    "preco": 8.90,
+    "quantidade": 120,
+    "componentes": ["Frango", "Massa", "Creme de leite"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT015",
+    "imagens": [
+      "https://exemplo.com/imagens/ravioli.jpg"
+    ],
+    "nome": "Ravioli de Ricota",
+    "descricao": "Ravioli recheado com ricota e espinafre.",
+    "preco": 46.90,
+    "quantidade": 50,
+    "componentes": ["Massa", "Ricota", "Espinafre", "Molho de tomate"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT016",
+    "imagens": [
+      "https://exemplo.com/imagens/saladacaprese.jpg"
+    ],
+    "nome": "Salada Caprese",
+    "descricao": "Salada italiana com tomate, mussarela e manjericão.",
+    "preco": 34.90,
+    "quantidade": 40,
+    "componentes": ["Tomate", "Mussarela", "Manjericão", "Azeite"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT017",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzaportuguesa.jpg"
+    ],
+    "nome": "Pizza Portuguesa",
+    "descricao": "Pizza com presunto, ovo, cebola e azeitonas.",
+    "preco": 64.90,
+    "quantidade": 30,
+    "componentes": ["Massa", "Molho de tomate", "Presunto", "Ovo", "Cebola", "Azeitonas"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT018",
+    "imagens": [
+      "https://exemplo.com/imagens/temaki.jpg"
+    ],
+    "nome": "Temaki de Atum",
+    "descricao": "Temaki recheado com atum fresco.",
+    "preco": 72.90,
+    "quantidade": 20,
+    "componentes": ["Arroz", "Alga", "Atum", "Pepino"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT019",
+    "imagens": [
+      "https://exemplo.com/imagens/picanha.jpg"
+    ],
+    "nome": "Picanha na Chapa",
+    "descricao": "Picanha grelhada com acompanhamentos.",
+    "preco": 89.90,
+    "quantidade": 40,
+    "componentes": ["Picanha", "Arroz", "Feijão", "Farofa"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT020",
+    "imagens": [
+      "https://exemplo.com/imagens/parmegiana.jpg"
+    ],
+    "nome": "Frango à Parmegiana",
+    "descricao": "Frango empanado com molho de tomate e queijo.",
+    "preco": 48.90,
+    "quantidade": 60,
+    "componentes": ["Frango", "Molho de tomate", "Queijo", "Macarrão"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT021",
+    "imagens": [
+      "https://exemplo.com/imagens/penne.jpg"
+    ],
+    "nome": "Penne ao Molho Branco",
+    "descricao": "Penne com molho branco e cogumelos.",
+    "preco": 41.90,
+    "quantidade": 55,
+    "componentes": ["Penne", "Molho branco", "Cogumelos", "Parmesão"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT022",
+    "imagens": [
+      "https://exemplo.com/imagens/saladacolorida.jpg"
+    ],
+    "nome": "Salada Colorida",
+    "descricao": "Salada mista com vegetais frescos.",
+    "preco": 28.90,
+    "quantidade": 50,
+    "componentes": ["Alface", "Tomate", "Cenoura", "Beterraba", "Milho"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT023",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzamussarela.jpg"
+    ],
+    "nome": "Pizza Mussarela",
+    "descricao": "Pizza simples com mussarela derretida.",
+    "preco": 57.90,
+    "quantidade": 45,
+    "componentes": ["Massa", "Molho de tomate", "Mussarela"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT024",
+    "imagens": [
+      "https://exemplo.com/imagens/uramaki.jpg"
+    ],
+    "nome": "Uramaki Califórnia",
+    "descricao": "Uramaki com cream cheese e pepino.",
+    "preco": 68.90,
+    "quantidade": 35,
+    "componentes": ["Arroz", "Alga", "Cream cheese", "Pepino", "Salmão"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT025",
+    "imagens": [
+      "https://exemplo.com/imagens/virado.jpg"
+    ],
+    "nome": "Virado à Paulista",
+    "descricao": "Virado com feijão, couve e ovo.",
+    "preco": 35.90,
+    "quantidade": 75,
+    "componentes": ["Feijão", "Arroz", "Couve", "Ovo", "Bacon"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT026",
+    "imagens": [
+      "https://exemplo.com/imagens/carneassada.jpg"
+    ],
+    "nome": "Carne Assada",
+    "descricao": "Carne assada com batatas.",
+    "preco": 52.90,
+    "quantidade": 50,
+    "componentes": ["Carne", "Batatas", "Cenouras"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT027",
+    "imagens": [
+      "https://exemplo.com/imagens/spaghetti.jpg"
+    ],
+    "nome": "Spaghetti Carbonara",
+    "descricao": "Spaghetti com molho carbonara.",
+    "preco": 43.90,
+    "quantidade": 60,
+    "componentes": ["Spaghetti", "Bacon", "Ovo", "Queijo"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT028",
+    "imagens": [
+      "https://exemplo.com/imagens/saladadetomate.jpg"
+    ],
+    "nome": "Salada de Tomate",
+    "descricao": "Salada fresca de tomates variados.",
+    "preco": 26.90,
+    "quantidade": 55,
+    "componentes": ["Tomate", "Cebola", "Azeite", "Vinagre"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT029",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzabacon.jpg"
+    ],
+    "nome": "Pizza Bacon",
+    "descricao": "Pizza com bacon crocante e mussarela.",
+    "preco": 61.90,
+    "quantidade": 40,
+    "componentes": ["Massa", "Molho de tomate", "Bacon", "Mussarela"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT030",
+    "imagens": [
+      "https://exemplo.com/imagens/nigiri.jpg"
+    ],
+    "nome": "Nigiri de Salmão",
+    "descricao": "Nigiri com fatia de salmão fresco.",
+    "preco": 70.90,
+    "quantidade": 30,
+    "componentes": ["Arroz", "Salmão"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT031",
+    "imagens": [
+      "https://exemplo.com/imagens/baião.jpg"
+    ],
+    "nome": "Baião de Dois",
+    "descricao": "Baião de dois com queijo coalho.",
+    "preco": 37.90,
+    "quantidade": 65,
+    "componentes": ["Arroz", "Feijão verde", "Queijo coalho"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT032",
+    "imagens": [
+      "https://exemplo.com/imagens/peitofrango.jpg"
+    ],
+    "nome": "Peito de Frango Grelhado",
+    "descricao": "Peito de frango grelhado com salada.",
+    "preco": 36.90,
+    "quantidade": 70,
+    "componentes": ["Frango", "Salada", "Limão"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT033",
+    "imagens": [
+      "https://exemplo.com/imagens/fettuccine.jpg"
+    ],
+    "nome": "Fettuccine Alfredo",
+    "descricao": "Fettuccine com molho alfredo cremoso.",
+    "preco": 45.90,
+    "quantidade": 50,
+    "componentes": ["Fettuccine", "Molho alfredo", "Parmesão"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT034",
+    "imagens": [
+      "https://exemplo.com/imagens/saladapalmito.jpg"
+    ],
+    "nome": "Salada de Palmito",
+    "descricao": "Salada com palmito e maionese.",
+    "preco": 31.90,
+    "quantidade": 45,
+    "componentes": ["Palmito", "Maionese", "Cebola"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT035",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzaquatroqueijos.jpg"
+    ],
+    "nome": "Pizza Quatro Queijos",
+    "descricao": "Pizza com quatro tipos de queijo.",
+    "preco": 66.90,
+    "quantidade": 35,
+    "componentes": ["Massa", "Molho de tomate", "Mussarela", "Gorgonzola", "Parmesão", "Provolone"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT036",
+    "imagens": [
+      "https://exemplo.com/imagens/sushiroll.jpg"
+    ],
+    "nome": "Sushi Roll Especial",
+    "descricao": "Roll de sushi com recheios variados.",
+    "preco": 74.90,
+    "quantidade": 25,
+    "componentes": ["Arroz", "Alga", "Salmão", "Cream cheese", "Abacate"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT037",
+    "imagens": [
+      "https://exemplo.com/imagens/tapioca.jpg"
+    ],
+    "nome": "Tapioca com Queijo",
+    "descricao": "Tapioca recheada com queijo coalho.",
+    "preco": 12.90,
+    "quantidade": 100,
+    "componentes": ["Tapioca", "Queijo coalho"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT038",
+    "imagens": [
+      "https://exemplo.com/imagens/sobrecoxa.jpg"
+    ],
+    "nome": "Sobrecoxa Assada",
+    "descricao": "Sobrecoxa de frango assada com temperos.",
+    "preco": 29.90,
+    "quantidade": 80,
+    "componentes": ["Frango", "Temperos"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT039",
+    "imagens": [
+      "https://exemplo.com/imagens/tagliatelle.jpg"
+    ],
+    "nome": "Tagliatelle ao Funghi",
+    "descricao": "Tagliatelle com cogumelos e molho.",
+    "preco": 47.90,
+    "quantidade": 45,
+    "componentes": ["Tagliatelle", "Cogumelos", "Molho"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT040",
+    "imagens": [
+      "https://exemplo.com/imagens/saladabatata.jpg"
+    ],
+    "nome": "Salada de Batata",
+    "descricao": "Salada de batatas cozidas com maionese.",
+    "preco": 24.90,
+    "quantidade": 60,
+    "componentes": ["Batata", "Maionese", "Cebola"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT041",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzavegetariana.jpg"
+    ],
+    "nome": "Pizza Vegetariana",
+    "descricao": "Pizza com vegetais frescos.",
+    "preco": 58.90,
+    "quantidade": 40,
+    "componentes": ["Massa", "Molho de tomate", "Tomate", "Pimentão", "Cebola", "Azeitonas"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT042",
+    "imagens": [
+      "https://exemplo.com/imagens/sashimiatum.jpg"
+    ],
+    "nome": "Sashimi de Atum",
+    "descricao": "Sashimi de atum fresco.",
+    "preco": 78.90,
+    "quantidade": 20,
+    "componentes": ["Atum", "Wasabi", "Shoyu"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT043",
+    "imagens": [
+      "https://exemplo.com/imagens/cuscuz.jpg"
+    ],
+    "nome": "Cuscuz Nordestino",
+    "descricao": "Cuscuz com manteiga e leite.",
+    "preco": 15.90,
+    "quantidade": 90,
+    "componentes": ["Cuscuz", "Manteiga", "Leite"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT044",
+    "imagens": [
+      "https://exemplo.com/imagens/frangoxadrez.jpg"
+    ],
+    "nome": "Frango Xadrez",
+    "descricao": "Frango xadrez com legumes.",
+    "preco": 40.90,
+    "quantidade": 55,
+    "componentes": ["Frango", "Legumes", "Molho"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT045",
+    "imagens": [
+      "https://exemplo.com/imagens/lasanhavegetariana.jpg"
+    ],
+    "nome": "Lasanha Vegetariana",
+    "descricao": "Lasanha com berinjela e ricota.",
+    "preco": 46.90,
+    "quantidade": 50,
+    "componentes": ["Massa", "Berinjela", "Ricota", "Molho"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT046",
+    "imagens": [
+      "https://exemplo.com/imagens/saladacouve.jpg"
+    ],
+    "nome": "Salada de Couve",
+    "descricao": "Salada de couve crua com limão.",
+    "preco": 22.90,
+    "quantidade": 65,
+    "componentes": ["Couve", "Limão", "Azeite"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT047",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzapepperoni.jpg"
+    ],
+    "nome": "Pizza Pepperoni",
+    "descricao": "Pizza com pepperoni picante.",
+    "preco": 63.90,
+    "quantidade": 35,
+    "componentes": ["Massa", "Molho de tomate", "Pepperoni", "Mussarela"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT048",
+    "imagens": [
+      "https://exemplo.com/imagens/maki.jpg"
+    ],
+    "nome": "Maki de Pepino",
+    "descricao": "Maki simples com pepino.",
+    "preco": 65.90,
+    "quantidade": 40,
+    "componentes": ["Arroz", "Alga", "Pepino"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT049",
+    "imagens": [
+      "https://exemplo.com/imagens/arrozcarreteiro.jpg"
+    ],
+    "nome": "Arroz Carreteiro",
+    "descricao": "Arroz com carne seca e bacon.",
+    "preco": 38.90,
+    "quantidade": 70,
+    "componentes": ["Arroz", "Carne seca", "Bacon"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT050",
+    "imagens": [
+      "https://exemplo.com/imagens/coxinhas.jpg"
+    ],
+    "nome": "Coxinhas de Frango (6 un)",
+    "descricao": "Seis coxinhas de frango crocantes.",
+    "preco": 25.90,
+    "quantidade": 80,
+    "componentes": ["Frango", "Massa", "Óleo"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT051",
+    "imagens": [
+      "https://exemplo.com/imagens/cannelloni.jpg"
+    ],
+    "nome": "Cannelloni de Espinafre",
+    "descricao": "Cannelloni recheado com espinafre.",
+    "preco": 49.90,
+    "quantidade": 40,
+    "componentes": ["Massa", "Espinafre", "Ricota", "Molho"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT052",
+    "imagens": [
+      "https://exemplo.com/imagens/saladabeterraba.jpg"
+    ],
+    "nome": "Salada de Beterraba",
+    "descricao": "Beterraba cozida com cebola.",
+    "preco": 27.90,
+    "quantidade": 55,
+    "componentes": ["Beterraba", "Cebola", "Azeite"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT053",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzabrocolis.jpg"
+    ],
+    "nome": "Pizza de Brócolis",
+    "descricao": "Pizza com brócolis e mussarela.",
+    "preco": 59.90,
+    "quantidade": 45,
+    "componentes": ["Massa", "Molho de tomate", "Brócolis", "Mussarela"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT054",
+    "imagens": [
+      "https://exemplo.com/imagens/temakicalifornia.jpg"
+    ],
+    "nome": "Temaki Califórnia",
+    "descricao": "Temaki com recheio californiano.",
+    "preco": 73.90,
+    "quantidade": 30,
+    "componentes": ["Arroz", "Alga", "Cream cheese", "Abacate", "Pepino"],
+    "categoria": 5
+  },
+  {
+    "id": "PRT055",
+    "imagens": [
+      "https://exemplo.com/imagens/feijoadaverde.jpg"
+    ],
+    "nome": "Feijoada Verde",
+    "descricao": "Feijoada com feijão verde.",
+    "preco": 51.90,
+    "quantidade": 60,
+    "componentes": ["Feijão verde", "Carne", "Arroz"],
+    "categoria": 0
+  },
+  {
+    "id": "PRT056",
+    "imagens": [
+      "https://exemplo.com/imagens/frangopassarinho.jpg"
+    ],
+    "nome": "Frango à Passarinho",
+    "descricao": "Frango frito com alho e óleo.",
+    "preco": 33.90,
+    "quantidade": 75,
+    "componentes": ["Frango", "Alho", "Óleo"],
+    "categoria": 1
+  },
+  {
+    "id": "PRT057",
+    "imagens": [
+      "https://exemplo.com/imagens/gnocchi.jpg"
+    ],
+    "nome": "Gnocchi ao Sugo",
+    "descricao": "Gnocchi com molho de tomate.",
+    "preco": 42.90,
+    "quantidade": 50,
+    "componentes": ["Gnocchi", "Molho de tomate", "Queijo"],
+    "categoria": 2
+  },
+  {
+    "id": "PRT058",
+    "imagens": [
+      "https://exemplo.com/imagens/saladamilho.jpg"
+    ],
+    "nome": "Salada de Milho",
+    "descricao": "Milho cozido com maionese.",
+    "preco": 23.90,
+    "quantidade": 70,
+    "componentes": ["Milho", "Maionese", "Cebola"],
+    "categoria": 3
+  },
+  {
+    "id": "PRT059",
+    "imagens": [
+      "https://exemplo.com/imagens/pizzacarne.jpg"
+    ],
+    "nome": "Pizza de Carne",
+    "descricao": "Pizza com carne moída e cebola.",
+    "preco": 60.90,
+    "quantidade": 40,
+    "componentes": ["Massa", "Molho de tomate", "Carne moída", "Cebola"],
+    "categoria": 4
+  },
+  {
+    "id": "PRT060",
+    "imagens": [
+      "https://exemplo.com/imagens/sushiplatter.jpg"
+    ],
+    "nome": "Platter de Sushi",
+    "descricao": "Platter com 30 peças de sushi variado.",
+    "preco": 89.90,
+    "quantidade": 15,
+    "componentes": ["Arroz", "Peixe", "Alga", "Vegetais"],
+    "categoria": 5
+  }
+]

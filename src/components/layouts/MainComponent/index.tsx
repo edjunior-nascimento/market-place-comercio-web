@@ -25,7 +25,7 @@ export function MainComponent() {
   const value = useMemo(() => location.pathname, [location.pathname]);
 
   return (
-    <Box sx={{ minHeight: "100vh", pb: 7 }}>
+    <Box sx={{ minHeight: "100vh", pb: 7, display: {md: 'flex', sx: 'block'}, flexDirection:{md: 'row', sx: 'column'} }}>
 
       {isDesktop && (
 

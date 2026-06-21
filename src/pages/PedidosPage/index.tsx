@@ -1,11 +1,41 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { InputSearch } from "../../components/feature/InputSearch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectInput from "../../components/feature/SelectInput";
-import CardPedido from "../../components/layouts/CardPedido";
+import CardPedido from "../../components/layouts/CardCompra";
+import { CompraType } from "../../types/compra.type";
+import ComprasService from "../../service/compras.service";
+import { useNavigate } from "react-router-dom";
+
 
 export function PedidosPage() {  
+
+  const navigate = useNavigate(); 
   const [pesquisa, setPesquisa] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [compras, setCompras] = useState<CompraType[]>([]);
+
+    
+  useEffect(() => {
+    setLoading(true);
+    async function loadData() {
+      await getCompras();
+    }
+    loadData();
+  }, []);
+
+    async function getCompras() {
+    ComprasService.listar()
+      .then(response => {
+        setCompras(response);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar entregas', error);
+      })
+      .finally(() => {     
+        setLoading(false);
+      });
+  }
 
   return (
     <Container sx={{ mt: 4, p: 1 }}>
@@ -32,7 +62,7 @@ export function PedidosPage() {
             { label: "Finalizadas", value: "1m" },
             { label: "Canceladas", value: "cs" }
           ]} />
-           <SelectInput label="Exibir por" items={[
+          <SelectInput label="Exibir por" items={[
             { label: "Status", value: "24h" },
             { label: "Nome", value: "5sm" },
             { label: "Valor", value: "1m" },
@@ -40,8 +70,15 @@ export function PedidosPage() {
           ]} />
         </Box>
 
-        <CardPedido codigo="123" cliente="João da Silva" valor={150.00} quantidadeItens={2} tempo="2 dias" />
-        <CardPedido codigo="123" cliente="João da Silva" valor={150.00} quantidadeItens={2} tempo="2 dias" />
+        {
+          loading ? (
+            <Typography>Carregando...</Typography>
+          ):(
+            compras.map((compra) => (
+              <CardPedido key={compra.id} compra={compra} onClick={() => navigate('/compra/'+compra.id)}/>
+            ))
+          )
+        }
       </Box>
     </Container>
   );

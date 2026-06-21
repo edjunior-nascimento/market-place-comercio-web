@@ -1,0 +1,211 @@
+[
+    {
+        "id": "1",
+        "pedidos": [
+            {
+                "id": "p-1",
+                "produto": {
+                    "id": "prd-1",
+                    "imagens": [
+                        "https://example.com/imagem-hamburguer.jpg"
+                    ],
+                    "nome": "Hambúrguer Artesanal",
+                    "descricao": "Hambúrguer com queijo, alface, tomate e molho especial",
+                    "preco": 38.9,
+                    "quantidade": 10,
+                    "componentes": [
+                        "pão",
+                        "carne",
+                        "queijo",
+                        "alface",
+                        "tomate"
+                    ],
+                    "categoria": 1
+                },
+                "quantidade": 2,
+                "precoTotal": 77.8
+            },
+            {
+                "id": "p-2",
+                "produto": {
+                    "id": "prd-2",
+                    "imagens": [
+                        "https://example.com/imagem-batata.jpg"
+                    ],
+                    "nome": "Batata Frita",
+                    "descricao": "Batata frita crocante com sal especial",
+                    "preco": 18.5,
+                    "quantidade": 20,
+                    "componentes": [
+                        "batata",
+                        "sal",
+                        "óleo"
+                    ],
+                    "categoria": 2
+                },
+                "quantidade": 1,
+                "precoTotal": 18.5
+            }
+        ],
+        "endereco": {
+            "id": "e-1",
+            "nome": "João da Silva",
+            "telefone": "11987654321",
+            "endereco": "Rua das Flores",
+            "numero": "123",
+            "referencia": "Próximo ao mercado Central"
+        },
+        "pagamento": "PIX",
+        "cupom": {
+            "id": 1,
+            "codigo": "PROMO10",
+            "descricao": "R$ 10 de desconto para pedidos acima de R$ 50",
+            "limiteValor": 50,
+            "validoAte": "2026-12-31",
+            "valorDesconto": 10
+        },
+        "observacao": "Sem cebola no hambúrguer",
+        "troco": null,
+        "subTotal": 96.3,
+        "taxas": 8.0,
+        "total": 94.3,
+        "status": "PREPARANDO",
+        "data": "2026-06-20"
+    },
+    {
+        "id": "2",
+        "pedidos": [
+            {
+                "id": "p-3",
+                "produto": {
+                    "id": "prd-3",
+                    "imagens": [
+                        "https://example.com/imagem-salada.jpg"
+                    ],
+                    "nome": "Salada Caesar",
+                    "descricao": "Salada com frango grelhado, alface e molho caesar",
+                    "preco": 32.0,
+                    "quantidade": 15,
+                    "componentes": [
+                        "alface",
+                        "frango",
+                        "parmesão",
+                        "molho caesar"
+                    ],
+                    "categoria": 3
+                },
+                "quantidade": 1,
+                "precoTotal": 32.0
+            }
+        ],
+        "endereco": {
+            "id": "e-2",
+            "nome": "Maria Souza",
+            "telefone": "11991234567",
+            "endereco": "Av. Brasil",
+            "numero": "987",
+            "referencia": "Ao lado da farmácia São Jorge"
+        },
+        "pagamento": "CARTAO",
+        "cupom": null,
+        "observacao": "Molho à parte",
+        "troco": null,
+        "subTotal": 32.0,
+        "taxas": 5.0,
+        "total": 37.0,
+        "status": "ENVIADO",
+        "data": "2026-06-19"
+    },
+    {
+        "id": "3",
+        "pedidos": [
+            {
+                "id": "p-4",
+                "produto": {
+                    "id": "prd-4",
+                    "imagens": [
+                        "https://example.com/imagem-suco.jpg"
+                    ],
+                    "nome": "Suco Natural",
+                    "descricao": "Suco de laranja natural, 500ml",
+                    "preco": 12.5,
+                    "quantidade": 30,
+                    "componentes": [
+                        "laranja",
+                        "gelo"
+                    ],
+                    "categoria": 4
+                },
+                "quantidade": 2,
+                "precoTotal": 25.0
+            }
+        ],
+        "endereco": {
+            "id": "e-3",
+            "nome": "Antonio Carlos",
+            "telefone": "11999887766",
+            "endereco": "Rua do Comércio",
+            "numero": "450",
+            "referencia": "Em frente à padaria Pão Quente"
+        },
+        "pagamento": "DINHEIRO",
+        "cupom": null,
+        "observacao": null,
+        "troco": 10,
+        "subTotal": 25.0,
+        "taxas": 4.5,
+        "total": 29.5,
+        "status": "ENTREGUE",
+        "data": "2026-06-18"
+    },
+    {
+        "id": "4",
+        "pedidos": [
+            {
+                "id": "p-5",
+                "produto": {
+                    "id": "prd-5",
+                    "imagens": [
+                        "https://example.com/imagem-sobremesa.jpg"
+                    ],
+                    "nome": "Sobremesa Brownie",
+                    "descricao": "Brownie com sorvete de creme",
+                    "preco": 24.0,
+                    "quantidade": 10,
+                    "componentes": [
+                        "chocolate",
+                        "sorvete",
+                        "nozes"
+                    ],
+                    "categoria": 5
+                },
+                "quantidade": 1,
+                "precoTotal": 24.0
+            }
+        ],
+        "endereco": {
+            "id": "e-4",
+            "nome": "Fernanda Lima",
+            "telefone": "11990001122",
+            "endereco": "Rua Nova",
+            "numero": "202",
+            "referencia": "Próximo ao posto de gasolina"
+        },
+        "pagamento": "PIX",
+        "cupom": {
+            "id": 2,
+            "codigo": "VERAO5",
+            "descricao": "R$ 5 de desconto em qualquer pedido",
+            "limiteValor": 0,
+            "validoAte": "2026-09-30",
+            "valorDesconto": 5
+        },
+        "observacao": null,
+        "troco": null,
+        "subTotal": 24.0,
+        "taxas": 3.5,
+        "total": 22.5,
+        "status": "CANCELADO",
+        "data": "2026-06-17"
+    }
+]

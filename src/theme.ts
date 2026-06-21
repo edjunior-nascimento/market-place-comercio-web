@@ -39,7 +39,8 @@ const theme = createTheme({
         },
         h6: {
           fontSize: '16px',
-          fontWeight: '600'
+          fontWeight: '600',
+          padding: 0,
         },
         subtitle1: {
           color: '#000000DD'
@@ -131,8 +132,12 @@ const theme = createTheme({
     },
     MuiDrawer: {
       styleOverrides: {
+        root: {
+          maxWidth: 86,
+        },
         paper: {
           maxWidth: 86,
+          position: 'relative',
         },
       },
     },

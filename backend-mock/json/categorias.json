@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "nome": "Pratos Prontos"
+    },
+    {
+        "id": 1,
+        "nome": "Pratos do Dia"
+    },
+    {
+        "id": 2,
+        "nome": "Lanches"
+    },
+    {
+        "id": 3,
+        "nome": "Massas"
+    },
+    {
+        "id": 4,
+        "nome": "Carnes"
+    },
+    {
+        "id": 5,
+        "nome": "Vegetarianos"
+    }
+]
