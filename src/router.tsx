@@ -5,9 +5,12 @@ import { MaisPage } from "./pages/MaisPage";
 import { PedidosPage } from "./pages/PedidosPage";
 import { ProdutosPage } from "./pages/ProdutosPage";
 import { UsuarioPage } from "./pages/UsuarioPage";
+import { EmpresaPage } from "./pages/EmpresaPage";
 import { LoginPage } from "./pages/LoginPage";
 import { MainComponent } from "./components/layouts/MainComponent";
 import { CompraPage } from "./pages/CompraPage";
+import { CategoriaPage } from "./pages/CategoriaPage";
+import { EditeProdutoPage } from "./pages/EditeProdutoPage";
 
 function RouterApp() {
     
@@ -23,8 +26,11 @@ function RouterApp() {
                         <Route path="/pedidos" element={<PedidosPage />}/>
                         <Route path="/produtos" element={<ProdutosPage />}/>
                         <Route path="/usuario" element={<UsuarioPage />}/>
+                        <Route path="/empresa" element={<EmpresaPage />}/>
                     </Route>
                     <Route path="/compra/:compraId" element={<CompraPage />}/>
+                    <Route path="/categoria" element={<CategoriaPage />}/>
+                    <Route path="/produto" element={<EditeProdutoPage />}/>
                 </Routes>
             </AnimatePresence>
     )
