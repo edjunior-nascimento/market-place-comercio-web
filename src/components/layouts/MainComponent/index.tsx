@@ -6,13 +6,18 @@ import ReceiptLongOutlined from "@mui/icons-material/ReceiptLongOutlined";
 import Inventory2Outlined from "@mui/icons-material/Inventory2Outlined";
 import PermIdentityOutlined from "@mui/icons-material/PermIdentityOutlined";
 import MenuOutlined from "@mui/icons-material/MenuOutlined";
+import Storefront from "@mui/icons-material/Storefront";
+import DescriptionOutlined from "@mui/icons-material/DescriptionOutlined";
+import Logout from "@mui/icons-material/Logout";
 
 const menuItems = [
   { label: "Pedidos", value: "/pedidos", icon: <ReceiptLongOutlined /> },
   { label: "Produtos", value: "/produtos", icon: <Inventory2Outlined /> },
   { label: "Caixa", value: "/caixa", icon: <MonitorOutlined /> },
   { label: "Usuário", value: "/usuario", icon: <PermIdentityOutlined /> },
-  { label: "Mais", value: "/mais", icon: <MenuOutlined /> },
+  { label: "Empresa", value: "/empresa", icon: <Storefront /> },
+  { label: "Relatórios", value: "/relatorios", icon: <DescriptionOutlined /> },
+  { label: "Sair", value: "/sair", icon: <Logout /> },
 ];
 
 const DRAWER_WIDTH = 250;
@@ -51,7 +56,7 @@ export function MainComponent() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  py: 2,
+                  py: 1,
                   "&.Mui-selected": {
                     "& .MuiListItemIcon-root": {
                       color: "#d50000",
