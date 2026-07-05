@@ -11,6 +11,8 @@ import { MainComponent } from "./components/layouts/MainComponent";
 import { CompraPage } from "./pages/CompraPage";
 import { CategoriaPage } from "./pages/CategoriaPage";
 import { EditeProdutoPage } from "./pages/EditeProdutoPage";
+import { DadosUsuarioPage } from "./pages/DadosUsuarioPage";
+import { AlterarSenhaPage } from "./pages/AlterarSenhaPage";
 
 function RouterApp() {
     
@@ -30,6 +32,8 @@ function RouterApp() {
                     </Route>
                     <Route path="/compra/:compraId" element={<CompraPage />}/>
                     <Route path="/categoria" element={<CategoriaPage />}/>
+                    <Route path="/dados" element={<DadosUsuarioPage />}/>
+                    <Route path="/alterar-senha" element={<AlterarSenhaPage />}/>
                     <Route path="/produto/:produtoId?" element={<EditeProdutoPage />}/>
                 </Routes>
             </AnimatePresence>

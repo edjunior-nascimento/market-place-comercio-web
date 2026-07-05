@@ -15,9 +15,13 @@ import {
   ChevronRight,
 } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
+import { useNavigate } from "react-router-dom";
 
 
 export function UsuarioPage() {
+
+  const navigate = useNavigate();
+
 
   return (
     <Container sx={{ pt: 10, pb: 4, px: { xs: 2, md: 4 } }} >
@@ -42,19 +46,19 @@ export function UsuarioPage() {
             }}
           />
         </Avatar>
-         <Typography
-              variant="h6"
-              fontWeight={600}
-            >
-              João da Silva
-            </Typography>
-             <Typography
-              variant="h6"
-              fontWeight={500}
-              color="#666"
-            >
-              @joaodasilva
-            </Typography>
+        <Typography
+          variant="h6"
+          fontWeight={600}
+        >
+          João da Silva
+        </Typography>
+        <Typography
+          variant="h6"
+          fontWeight={500}
+          color="#666"
+        >
+          @joaodasilva
+        </Typography>
       </Box>
       <Card
         sx={{
@@ -65,6 +69,8 @@ export function UsuarioPage() {
           boxShadow: "none",
           backgroundColor: "#ffffff",
         }}
+        onClick={() => navigate("/dados")}
+
       >
         <Box
           display="flex"
@@ -98,6 +104,8 @@ export function UsuarioPage() {
           boxShadow: "none",
           backgroundColor: "#ffffff"
         }}
+        onClick={() => navigate("/alterar-senha")}
+
       >
         <Box
           display="flex"
