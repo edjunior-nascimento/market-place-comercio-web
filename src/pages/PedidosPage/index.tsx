@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 export function PedidosPage() {  
 
-  const navigate = useNavigate(); 
   const [pesquisa, setPesquisa] = useState('');
   const [loading, setLoading] = useState(false);
   const [compras, setCompras] = useState<CompraType[]>([]);
@@ -75,7 +74,7 @@ export function PedidosPage() {
             <Typography>Carregando...</Typography>
           ):(
             compras.map((compra) => (
-              <CardPedido key={compra.id} compra={compra} onClick={() => navigate('/compra/'+compra.id)}/>
+              <CardPedido key={compra.id} compra={compra}/>
             ))
           )
         }
