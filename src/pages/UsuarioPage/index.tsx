@@ -16,15 +16,20 @@ import {
 } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/layouts/Header";
 
 
 export function UsuarioPage() {
 
   const navigate = useNavigate();
-
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Container sx={{ pt: 10, pb: 4, px: { xs: 2, md: 4 } }} >
+
+      {!isDesktop && (<Header link="/mais" showCartButton={false} />)}
+
       <Box
         display="flex"
         flexDirection="column"

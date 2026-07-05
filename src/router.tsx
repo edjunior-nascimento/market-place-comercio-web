@@ -13,6 +13,7 @@ import { CategoriaPage } from "./pages/CategoriaPage";
 import { EditeProdutoPage } from "./pages/EditeProdutoPage";
 import { DadosUsuarioPage } from "./pages/DadosUsuarioPage";
 import { AlterarSenhaPage } from "./pages/AlterarSenhaPage";
+import { RelatoriosPage } from "./pages/RelatoriosPage";
 
 function RouterApp() {
     
@@ -29,6 +30,7 @@ function RouterApp() {
                         <Route path="/produtos" element={<ProdutosPage />}/>
                         <Route path="/usuario" element={<UsuarioPage />}/>
                         <Route path="/empresa" element={<EmpresaPage />}/>
+                        <Route path="/relatorios" element={<RelatoriosPage />}/>
                     </Route>
                     <Route path="/compra/:compraId" element={<CompraPage />}/>
                     <Route path="/categoria" element={<CategoriaPage />}/>

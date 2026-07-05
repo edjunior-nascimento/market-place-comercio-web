@@ -12,6 +12,7 @@ import {
   AssessmentOutlined,
   LogoutOutlined,
   ChevronRight,
+  PermIdentityOutlined,
 } from "@mui/icons-material";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,6 +40,7 @@ export function MaisPage() {
           boxShadow: "none",
           backgroundColor: "#ffffff",
         }}
+        onClick={() => navigate("/empresa")}
       >
         <Box
           display="flex"
@@ -96,6 +98,7 @@ export function MaisPage() {
           boxShadow: "none",
           backgroundColor: "#ffffff"
         }}
+        onClick={() => navigate("/usuario")}
       >
         <Box
           display="flex"
@@ -103,19 +106,19 @@ export function MaisPage() {
           justifyContent="space-between"
         >
           <Box display="flex" alignItems="center" gap={2}>
-            <AssessmentOutlined
+            <PermIdentityOutlined
               sx={{
                 fontSize: 28,
-                color: "#666666",
+                color: "#1f1f1f",
               }}
             />
 
             <Typography
               variant="h6"
               fontWeight={600}
-              color="#666666"
+              color="#1f1f1f"
             >
-              Relatórios
+              Usuário
             </Typography>
           </Box>
 
@@ -135,6 +138,7 @@ export function MaisPage() {
           boxShadow: "none",
           backgroundColor: "#ffffff"
         }}
+        onClick={() => navigate("/sair")}
       >
         <Box
           display="flex"

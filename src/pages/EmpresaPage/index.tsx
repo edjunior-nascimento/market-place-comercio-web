@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Container, Divider, FormControlLabel, Switch, Checkbox, TextField, Typography, Grid } from "@mui/material";
+import { Box, Button, Card, CardContent, Container, Divider, FormControlLabel, Switch, Checkbox, TextField, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
 import { AddPhotoAlternateOutlined } from "@mui/icons-material";
 import { Header } from "../../components/layouts/Header";
 import { useState } from "react";
@@ -15,6 +15,8 @@ const diasSemana = [
 
 export function EmpresaPage() {
     const [aberto, setAberto] = useState(true);
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
     const [empresa, setEmpresa] = useState({
         nome: "MacDonald`s",
         endereco: "Rua Coronel João Cicero Memória",
@@ -43,8 +45,8 @@ export function EmpresaPage() {
     };
 
     return (
-        <Container sx={{ pt: 10, pb: 4, px: { xs: 2, md: 4 } }}>
-            <Header link="/usuario" showCartButton={false} />
+        <Container sx={{ pb: 4, px: { xs: 2, md: 4 } }}>
+            {!isDesktop && (<Header link="/mais" showCartButton={false} />)}
 
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2, mt: 2 }}>
                 <Box>

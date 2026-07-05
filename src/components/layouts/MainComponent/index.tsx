@@ -14,9 +14,9 @@ const menuItems = [
   { label: "Pedidos", value: "/pedidos", icon: <ReceiptLongOutlined /> },
   { label: "Produtos", value: "/produtos", icon: <Inventory2Outlined /> },
   { label: "Caixa", value: "/caixa", icon: <MonitorOutlined /> },
-  { label: "Usuário", value: "/usuario", icon: <PermIdentityOutlined /> },
-  { label: "Empresa", value: "/empresa", icon: <Storefront /> },
   { label: "Relatórios", value: "/relatorios", icon: <DescriptionOutlined /> },
+  { label: "Empresa", value: "/empresa", icon: <Storefront /> },
+  { label: "Usuário", value: "/usuario", icon: <PermIdentityOutlined /> },
   { label: "Sair", value: "/sair", icon: <Logout /> },
 ];
 
@@ -104,7 +104,7 @@ export function MainComponent() {
             <BottomNavigationAction label="Pedidos" value="/pedidos" icon={<ReceiptLongOutlined />} />
             <BottomNavigationAction label="Produtos" value="/produtos" icon={<Inventory2Outlined />} />
             <BottomNavigationAction label="Caixa" value="/caixa" icon={<MonitorOutlined />} />
-            <BottomNavigationAction label="Usuário" value="/usuario" icon={<PermIdentityOutlined />} />
+            <BottomNavigationAction label="Relatórios" value="/relatorios" icon={<DescriptionOutlined />} />
             <BottomNavigationAction label="Mais" value="/mais" icon={<MenuOutlined />} />
           </BottomNavigation>
         </Paper>

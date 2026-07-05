@@ -3,52 +3,55 @@ import {
     Container,
     Typography,
     Paper,
+    Card,
 } from "@mui/material";
 import { useState } from "react";
 import { InputSearch } from "../../components/feature/InputSearch";
 import SelectInput from "../../components/feature/SelectInput";
+import { CardMovimento } from "../../components/layouts/CardMovimento";
+import { MoviementoType } from "../../types/movimento.type";
 
-interface Movimento {
-    id: number;
-    titulo: string;
-    cliente: string;
-    data: string;
-    valor: number;
-    tipo: "entrada" | "saida";
-}
 
 export function CaixaPage() {
     const [pesquisa, setPesquisa] = useState("");
 
-    const movimentacoes: Movimento[] = [
+    const movimentacoes: MoviementoType[] = [
         {
-            id: 1,
-            titulo: "Pagamento à vista",
-            cliente: "0012 - Antonio da Silva",
+            id: "1",
+            nome: "Pagamento à vista",
+            descricao: "0012 - Antonio da Silva",
             data: "3 min atrás",
             valor: 20,
             tipo: "entrada",
         },
         {
-            id: 2,
-            titulo: "Ajuste Ref Pagamento no Cartão/Pix",
-            cliente: "0012 - Antonio da Silva",
+            id: "2",
+            nome: "Ajuste Ref Pagamento no Cartão/Pix",
+            descricao: "0012 - Antonio da Silva",
+            data: "3 min atrás",
+            valor: 20,
+            tipo: "entrada",
+        },
+        {
+            id: "3",
+            nome: "Ajuste Ref Pagamento no Cartão/Pix",
+            descricao: "0012 - Antonio da Silva",
             data: "3 min atrás",
             valor: -20,
             tipo: "saida",
         },
         {
-            id: 3,
-            titulo: "Pagamento no Cartão",
-            cliente: "0012 - Antonio da Silva",
+            id: "4",
+            nome: "Pagamento no Cartão",
+            descricao: "0012 - Antonio da Silva",
             data: "3 min atrás",
             valor: 20,
             tipo: "entrada",
         },
         {
-            id: 4,
-            titulo: "Ajuste Ref Pagamento no Cartão/Pix",
-            cliente: "0012 - Antonio da Silva",
+            id: "5",
+            nome: "Ajuste Ref Pagamento no Cartão/Pix",
+            descricao: "0012 - Antonio da Silva",
             data: "3 min atrás",
             valor: -20,
             tipo: "saida",
@@ -115,11 +118,12 @@ export function CaixaPage() {
                 </Box>
 
                 {/* RESUMO */}
-                <Paper
+                <Card
                     elevation={0}
                     sx={{
                         p: 1.5,
                         borderRadius: 1,
+                        backgroundColor: "#ffffff"
                     }}
                 >
                     <Box
@@ -169,74 +173,15 @@ export function CaixaPage() {
                             R$ 0,00
                         </Typography>
                     </Box>
-                </Paper>
+                </Card>
 
                 {/* MOVIMENTAÇÕES */}
                 {movimentacoes.map((movimento) => (
-                    <Paper
+                   
+                   <CardMovimento
                         key={movimento.id}
-                        elevation={0}
-                        sx={{
-                            p: 1.5,
-                            display: "flex",
-                            gap: 1.5,
-                            alignItems: "center",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                width: 5,
-                                height: 70,
-                                borderRadius: "4px",
-                                bgcolor:
-                                    movimento.tipo ===
-                                    "entrada"
-                                        ? "#5C6EF8"
-                                        : "#F55A5A",
-                            }}
-                        />
-
-                        <Box flex={1}>
-                            <Typography
-                                fontWeight={700}
-                                sx={{ lineHeight: 1.2 }}
-                            >
-                                {movimento.titulo}
-                            </Typography>
-
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
-                            >
-                                {movimento.cliente}
-                            </Typography>
-
-                            <Typography
-                                variant="caption"
-                                color="text.secondary"
-                            >
-                                {movimento.data}
-                            </Typography>
-                        </Box>
-
-                        <Typography
-                            fontWeight={500}
-                            color={
-                                movimento.tipo ===
-                                "entrada"
-                                    ? "inherit"
-                                    : "error"
-                            }
-                        >
-                            {movimento.valor < 0
-                                ? `-R$ ${Math.abs(
-                                      movimento.valor
-                                  ).toFixed(2)}`
-                                : `R$ ${movimento.valor.toFixed(
-                                      2
-                                  )}`}
-                        </Typography>
-                    </Paper>
+                        movimento={movimento}
+                   />
                 ))}
             </Box>
         </Container>
