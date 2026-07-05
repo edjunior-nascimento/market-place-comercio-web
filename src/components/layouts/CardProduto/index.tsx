@@ -1,6 +1,6 @@
 import { ArrowForward, DeleteOutlined, Edit, MoreVert, VisibilityOffOutlined } from "@mui/icons-material";
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProdutoType } from "../../../types/produto.type";
 import { InputCounter } from "../../feature/InputCounter";
 import { DialogConfirmation } from "../../feature/DialogConfirmation";
@@ -21,6 +21,7 @@ export function CardProduto(
     onClick,
   }: CardProdutoProps
 ) {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [openOcultar, setOpenOcultar] = useState(false);
   const [openExcluir, setOpenExcluir] = useState(false);
@@ -96,7 +97,7 @@ export function CardProduto(
     <ModelMenu 
       itens={
         [
-          {label:'Editar', descricao:'Editar produto', icone:<Edit />, onClick:()=>console.log('clicou no editar') },
+          {label:'Editar', descricao:'Editar produto', icone:<Edit />, onClick:()=>{navigate(`/produto/${produto.id}`); setOpen(false)}},
           {label:'Ocultar', descricao:'Oculta a exibição do produto', icone:<VisibilityOffOutlined />, onClick:()=>{ setOpenOcultar(true); setOpen(false)}},
           {label:'Excluir', descricao:'Excluir produto definivamente', icone:<DeleteOutlined />, onClick:()=>{ setOpenExcluir(true); setOpen(false)} },
           

@@ -26,11 +26,11 @@ function RouterApp() {
                         <Route path="/pedidos" element={<PedidosPage />}/>
                         <Route path="/produtos" element={<ProdutosPage />}/>
                         <Route path="/usuario" element={<UsuarioPage />}/>
-                        <Route path="/empresa" element={<EmpresaPage />}/>
                     </Route>
+                    <Route path="/empresa" element={<EmpresaPage />}/>
                     <Route path="/compra/:compraId" element={<CompraPage />}/>
                     <Route path="/categoria" element={<CategoriaPage />}/>
-                    <Route path="/produto" element={<EditeProdutoPage />}/>
+                    <Route path="/produto/:produtoId?" element={<EditeProdutoPage />}/>
                 </Routes>
             </AnimatePresence>
     )

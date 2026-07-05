@@ -77,7 +77,7 @@ export function CompraPage() {
             display: 'flex',
             flexDirection: 'column',
             gap: '10px',
-            px: { xs: '0px', md: '150px' },
+            px: { xs: '0px', md: '200px' },
           }}>
           {compra &&
             <Box

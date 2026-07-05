@@ -9,6 +9,7 @@
     "descricao": "Tradicional feijoada brasileira com acompanhamentos.",
     "preco": 49.90,
     "quantidade": 100,
+    "unidade": "un",
     "componentes": ["Feijão preto", "Carne seca", "Linguiça", "Arroz", "Farofa", "Couve", "Laranja"],
     "categoria": 0
   },
@@ -21,6 +22,7 @@
     "descricao": "Strogonoff de frango cremoso servido com arroz e batata palha.",
     "preco": 39.90,
     "quantidade": 80,
+    "unidade": "un",
     "componentes": ["Frango", "Creme de leite", "Champignon", "Arroz", "Batata palha"],
     "categoria": 1
   },
@@ -33,6 +35,7 @@
     "descricao": "Lasanha de massa fresca com molho bolonhesa e queijo gratinado.",
     "preco": 44.90,
     "quantidade": 60,
+    "unidade": "un",
     "componentes": ["Massa", "Molho bolonhesa", "Queijo", "Presunto", "Molho branco"],
     "categoria": 2
   },
@@ -45,6 +48,7 @@
     "descricao": "Salada Caesar com frango grelhado, croutons e molho especial.",
     "preco": 29.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Alface", "Frango grelhado", "Croutons", "Molho Caesar", "Parmesão"],
     "categoria": 3
   },
@@ -57,6 +61,7 @@
     "descricao": "Pizza clássica com molho de tomate, mussarela e manjericão.",
     "preco": 59.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Mussarela", "Manjericão"],
     "categoria": 4
   },
@@ -69,6 +74,7 @@
     "descricao": "Combo de sushis variados com 20 peças.",
     "preco": 69.90,
     "quantidade": 30,
+    "unidade": "un",
     "componentes": ["Arroz", "Salmão", "Alga", "Cream cheese", "Pepino"],
     "categoria": 5
   },
@@ -81,6 +87,7 @@
     "descricao": "Moqueca baiana de peixe com leite de coco e azeite de dendê.",
     "preco": 55.90,
     "quantidade": 70,
+    "unidade": "un",
     "componentes": ["Peixe", "Leite de coco", "Azeite de dendê", "Cebola", "Tomate", "Coentro"],
     "categoria": 0
   },
@@ -93,6 +100,7 @@
     "descricao": "Fricassê de frango com batata, milho e ervilhas.",
     "preco": 42.90,
     "quantidade": 65,
+    "unidade": "un",
     "componentes": ["Frango", "Batata", "Milho", "Ervilhas", "Creme de leite"],
     "categoria": 1
   },
@@ -105,6 +113,7 @@
     "descricao": "Macarrão fresco ao molho pesto com parmesão.",
     "preco": 38.90,
     "quantidade": 55,
+    "unidade": "un",
     "componentes": ["Macarrão", "Molho pesto", "Parmesão", "Pinhão"],
     "categoria": 2
   },
@@ -117,6 +126,7 @@
     "descricao": "Salada grega com azeitonas, queijo feta e azeite.",
     "preco": 32.90,
     "quantidade": 45,
+    "unidade": "un",
     "componentes": ["Tomate", "Pepino", "Cebola", "Azeitonas", "Queijo feta"],
     "categoria": 3
   },
@@ -129,6 +139,7 @@
     "descricao": "Pizza com calabresa, cebola e mussarela.",
     "preco": 62.90,
     "quantidade": 35,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Calabresa", "Cebola", "Mussarela"],
     "categoria": 4
   },
@@ -141,6 +152,7 @@
     "descricao": "Sashimi fresco de salmão com wasabi e shoyu.",
     "preco": 75.90,
     "quantidade": 25,
+    "unidade": "un",
     "componentes": ["Salmão", "Wasabi", "Shoyu"],
     "categoria": 5
   },
@@ -153,6 +165,7 @@
     "descricao": "Acarajé baiano com vatapá e caruru.",
     "preco": 18.90,
     "quantidade": 90,
+    "unidade": "un",
     "componentes": ["Feijão fradinho", "Cebola", "Vatapá", "Caruru"],
     "categoria": 0
   },
@@ -165,6 +178,7 @@
     "descricao": "Coxinha de frango com recheio cremoso.",
     "preco": 8.90,
     "quantidade": 120,
+    "unidade": "un",
     "componentes": ["Frango", "Massa", "Creme de leite"],
     "categoria": 1
   },
@@ -177,6 +191,7 @@
     "descricao": "Ravioli recheado com ricota e espinafre.",
     "preco": 46.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Massa", "Ricota", "Espinafre", "Molho de tomate"],
     "categoria": 2
   },
@@ -189,6 +204,7 @@
     "descricao": "Salada italiana com tomate, mussarela e manjericão.",
     "preco": 34.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Tomate", "Mussarela", "Manjericão", "Azeite"],
     "categoria": 3
   },
@@ -201,6 +217,7 @@
     "descricao": "Pizza com presunto, ovo, cebola e azeitonas.",
     "preco": 64.90,
     "quantidade": 30,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Presunto", "Ovo", "Cebola", "Azeitonas"],
     "categoria": 4
   },
@@ -213,6 +230,7 @@
     "descricao": "Temaki recheado com atum fresco.",
     "preco": 72.90,
     "quantidade": 20,
+    "unidade": "un",
     "componentes": ["Arroz", "Alga", "Atum", "Pepino"],
     "categoria": 5
   },
@@ -225,6 +243,7 @@
     "descricao": "Picanha grelhada com acompanhamentos.",
     "preco": 89.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Picanha", "Arroz", "Feijão", "Farofa"],
     "categoria": 0
   },
@@ -237,6 +256,7 @@
     "descricao": "Frango empanado com molho de tomate e queijo.",
     "preco": 48.90,
     "quantidade": 60,
+    "unidade": "un",
     "componentes": ["Frango", "Molho de tomate", "Queijo", "Macarrão"],
     "categoria": 1
   },
@@ -249,6 +269,7 @@
     "descricao": "Penne com molho branco e cogumelos.",
     "preco": 41.90,
     "quantidade": 55,
+    "unidade": "un",
     "componentes": ["Penne", "Molho branco", "Cogumelos", "Parmesão"],
     "categoria": 2
   },
@@ -261,6 +282,7 @@
     "descricao": "Salada mista com vegetais frescos.",
     "preco": 28.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Alface", "Tomate", "Cenoura", "Beterraba", "Milho"],
     "categoria": 3
   },
@@ -273,6 +295,7 @@
     "descricao": "Pizza simples com mussarela derretida.",
     "preco": 57.90,
     "quantidade": 45,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Mussarela"],
     "categoria": 4
   },
@@ -285,6 +308,7 @@
     "descricao": "Uramaki com cream cheese e pepino.",
     "preco": 68.90,
     "quantidade": 35,
+    "unidade": "un",
     "componentes": ["Arroz", "Alga", "Cream cheese", "Pepino", "Salmão"],
     "categoria": 5
   },
@@ -297,6 +321,7 @@
     "descricao": "Virado com feijão, couve e ovo.",
     "preco": 35.90,
     "quantidade": 75,
+    "unidade": "un",
     "componentes": ["Feijão", "Arroz", "Couve", "Ovo", "Bacon"],
     "categoria": 0
   },
@@ -309,6 +334,7 @@
     "descricao": "Carne assada com batatas.",
     "preco": 52.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Carne", "Batatas", "Cenouras"],
     "categoria": 1
   },
@@ -321,6 +347,7 @@
     "descricao": "Spaghetti com molho carbonara.",
     "preco": 43.90,
     "quantidade": 60,
+    "unidade": "un",
     "componentes": ["Spaghetti", "Bacon", "Ovo", "Queijo"],
     "categoria": 2
   },
@@ -333,6 +360,7 @@
     "descricao": "Salada fresca de tomates variados.",
     "preco": 26.90,
     "quantidade": 55,
+    "unidade": "un",
     "componentes": ["Tomate", "Cebola", "Azeite", "Vinagre"],
     "categoria": 3
   },
@@ -345,6 +373,7 @@
     "descricao": "Pizza com bacon crocante e mussarela.",
     "preco": 61.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Bacon", "Mussarela"],
     "categoria": 4
   },
@@ -357,6 +386,7 @@
     "descricao": "Nigiri com fatia de salmão fresco.",
     "preco": 70.90,
     "quantidade": 30,
+    "unidade": "un",
     "componentes": ["Arroz", "Salmão"],
     "categoria": 5
   },
@@ -369,6 +399,7 @@
     "descricao": "Baião de dois com queijo coalho.",
     "preco": 37.90,
     "quantidade": 65,
+    "unidade": "un",
     "componentes": ["Arroz", "Feijão verde", "Queijo coalho"],
     "categoria": 0
   },
@@ -381,6 +412,7 @@
     "descricao": "Peito de frango grelhado com salada.",
     "preco": 36.90,
     "quantidade": 70,
+    "unidade": "un",
     "componentes": ["Frango", "Salada", "Limão"],
     "categoria": 1
   },
@@ -393,6 +425,7 @@
     "descricao": "Fettuccine com molho alfredo cremoso.",
     "preco": 45.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Fettuccine", "Molho alfredo", "Parmesão"],
     "categoria": 2
   },
@@ -405,6 +438,7 @@
     "descricao": "Salada com palmito e maionese.",
     "preco": 31.90,
     "quantidade": 45,
+    "unidade": "un",
     "componentes": ["Palmito", "Maionese", "Cebola"],
     "categoria": 3
   },
@@ -417,6 +451,7 @@
     "descricao": "Pizza com quatro tipos de queijo.",
     "preco": 66.90,
     "quantidade": 35,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Mussarela", "Gorgonzola", "Parmesão", "Provolone"],
     "categoria": 4
   },
@@ -429,6 +464,7 @@
     "descricao": "Roll de sushi com recheios variados.",
     "preco": 74.90,
     "quantidade": 25,
+    "unidade": "un",
     "componentes": ["Arroz", "Alga", "Salmão", "Cream cheese", "Abacate"],
     "categoria": 5
   },
@@ -441,6 +477,7 @@
     "descricao": "Tapioca recheada com queijo coalho.",
     "preco": 12.90,
     "quantidade": 100,
+    "unidade": "un",
     "componentes": ["Tapioca", "Queijo coalho"],
     "categoria": 0
   },
@@ -453,6 +490,7 @@
     "descricao": "Sobrecoxa de frango assada com temperos.",
     "preco": 29.90,
     "quantidade": 80,
+    "unidade": "un",
     "componentes": ["Frango", "Temperos"],
     "categoria": 1
   },
@@ -465,6 +503,7 @@
     "descricao": "Tagliatelle com cogumelos e molho.",
     "preco": 47.90,
     "quantidade": 45,
+    "unidade": "un",
     "componentes": ["Tagliatelle", "Cogumelos", "Molho"],
     "categoria": 2
   },
@@ -477,6 +516,7 @@
     "descricao": "Salada de batatas cozidas com maionese.",
     "preco": 24.90,
     "quantidade": 60,
+    "unidade": "un",
     "componentes": ["Batata", "Maionese", "Cebola"],
     "categoria": 3
   },
@@ -489,6 +529,7 @@
     "descricao": "Pizza com vegetais frescos.",
     "preco": 58.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Tomate", "Pimentão", "Cebola", "Azeitonas"],
     "categoria": 4
   },
@@ -501,6 +542,7 @@
     "descricao": "Sashimi de atum fresco.",
     "preco": 78.90,
     "quantidade": 20,
+    "unidade": "un",
     "componentes": ["Atum", "Wasabi", "Shoyu"],
     "categoria": 5
   },
@@ -513,6 +555,7 @@
     "descricao": "Cuscuz com manteiga e leite.",
     "preco": 15.90,
     "quantidade": 90,
+    "unidade": "un",
     "componentes": ["Cuscuz", "Manteiga", "Leite"],
     "categoria": 0
   },
@@ -525,6 +568,7 @@
     "descricao": "Frango xadrez com legumes.",
     "preco": 40.90,
     "quantidade": 55,
+    "unidade": "un",
     "componentes": ["Frango", "Legumes", "Molho"],
     "categoria": 1
   },
@@ -537,6 +581,7 @@
     "descricao": "Lasanha com berinjela e ricota.",
     "preco": 46.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Massa", "Berinjela", "Ricota", "Molho"],
     "categoria": 2
   },
@@ -549,6 +594,7 @@
     "descricao": "Salada de couve crua com limão.",
     "preco": 22.90,
     "quantidade": 65,
+    "unidade": "un",
     "componentes": ["Couve", "Limão", "Azeite"],
     "categoria": 3
   },
@@ -561,6 +607,7 @@
     "descricao": "Pizza com pepperoni picante.",
     "preco": 63.90,
     "quantidade": 35,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Pepperoni", "Mussarela"],
     "categoria": 4
   },
@@ -573,6 +620,7 @@
     "descricao": "Maki simples com pepino.",
     "preco": 65.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Arroz", "Alga", "Pepino"],
     "categoria": 5
   },
@@ -585,6 +633,7 @@
     "descricao": "Arroz com carne seca e bacon.",
     "preco": 38.90,
     "quantidade": 70,
+    "unidade": "un",
     "componentes": ["Arroz", "Carne seca", "Bacon"],
     "categoria": 0
   },
@@ -597,6 +646,7 @@
     "descricao": "Seis coxinhas de frango crocantes.",
     "preco": 25.90,
     "quantidade": 80,
+    "unidade": "un",
     "componentes": ["Frango", "Massa", "Óleo"],
     "categoria": 1
   },
@@ -609,6 +659,7 @@
     "descricao": "Cannelloni recheado com espinafre.",
     "preco": 49.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Massa", "Espinafre", "Ricota", "Molho"],
     "categoria": 2
   },
@@ -621,6 +672,7 @@
     "descricao": "Beterraba cozida com cebola.",
     "preco": 27.90,
     "quantidade": 55,
+    "unidade": "un",
     "componentes": ["Beterraba", "Cebola", "Azeite"],
     "categoria": 3
   },
@@ -633,6 +685,7 @@
     "descricao": "Pizza com brócolis e mussarela.",
     "preco": 59.90,
     "quantidade": 45,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Brócolis", "Mussarela"],
     "categoria": 4
   },
@@ -645,6 +698,7 @@
     "descricao": "Temaki com recheio californiano.",
     "preco": 73.90,
     "quantidade": 30,
+    "unidade": "un",
     "componentes": ["Arroz", "Alga", "Cream cheese", "Abacate", "Pepino"],
     "categoria": 5
   },
@@ -657,6 +711,7 @@
     "descricao": "Feijoada com feijão verde.",
     "preco": 51.90,
     "quantidade": 60,
+    "unidade": "un",
     "componentes": ["Feijão verde", "Carne", "Arroz"],
     "categoria": 0
   },
@@ -669,6 +724,7 @@
     "descricao": "Frango frito com alho e óleo.",
     "preco": 33.90,
     "quantidade": 75,
+    "unidade": "un",
     "componentes": ["Frango", "Alho", "Óleo"],
     "categoria": 1
   },
@@ -681,6 +737,7 @@
     "descricao": "Gnocchi com molho de tomate.",
     "preco": 42.90,
     "quantidade": 50,
+    "unidade": "un",
     "componentes": ["Gnocchi", "Molho de tomate", "Queijo"],
     "categoria": 2
   },
@@ -693,6 +750,7 @@
     "descricao": "Milho cozido com maionese.",
     "preco": 23.90,
     "quantidade": 70,
+    "unidade": "un",
     "componentes": ["Milho", "Maionese", "Cebola"],
     "categoria": 3
   },
@@ -705,6 +763,7 @@
     "descricao": "Pizza com carne moída e cebola.",
     "preco": 60.90,
     "quantidade": 40,
+    "unidade": "un",
     "componentes": ["Massa", "Molho de tomate", "Carne moída", "Cebola"],
     "categoria": 4
   },
@@ -717,6 +776,7 @@
     "descricao": "Platter com 30 peças de sushi variado.",
     "preco": 89.90,
     "quantidade": 15,
+    "unidade": "un",
     "componentes": ["Arroz", "Peixe", "Alga", "Vegetais"],
     "categoria": 5
   }

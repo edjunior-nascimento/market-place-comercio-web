@@ -86,6 +86,7 @@ export function CategoriaPage() {
                     display: "flex",
                     flexDirection: "column",
                     gap: 1,
+                    px: { xs: '0px', md: '200px' },
                 }}
             >
                 <Box

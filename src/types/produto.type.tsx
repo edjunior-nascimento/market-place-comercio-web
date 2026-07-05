@@ -6,6 +6,7 @@ export interface ProdutoType {
     descricao: string,
     preco: number,
     quantidade: number,
+    unidade: string,
     componentes: string[],
     categoria: number
 }
