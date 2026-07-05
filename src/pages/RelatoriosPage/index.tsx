@@ -13,11 +13,60 @@ import {
 } from "@mui/icons-material";
 import { ButtonRadio } from "../../components/feature/ButtonRadio";
 import { useState } from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  BarChart,
+  Bar,
+} from "recharts";
+
 
 
 export function RelatoriosPage() {
 
   const [periodoSelecionado, setPeriodoSelecionado] = useState(1);
+  const data = [
+    { dia: "Seg", vendas: 120 },
+    { dia: "Ter", vendas: 180 },
+    { dia: "Qua", vendas: 160 },
+    { dia: "Qui", vendas: 260 },
+    { dia: "Sex", vendas: 230 },
+    { dia: "Sab", vendas: 320 },
+    { dia: "Dom", vendas: 290 },
+  ];
+
+
+  const data2 = [
+    { name: "Massas", value: 35 },
+    { name: "Carnes", value: 25 },
+    { name: "Frango", value: 20 },
+    { name: "Lanches", value: 20 },
+  ];
+
+
+  const data3 = [
+    { status: "Entregue", total: 90 },
+    { status: "Atendimento", total: 60 },
+    { status: "Pendente", total: 35 },
+    { status: "Cancelado", total: 10 },
+  ];
+
+
+
+  const COLORS = [
+    "#7C4DFF",
+    "#2196F3",
+    "#FF9800",
+    "#4CAF50",
+  ];
+
   return (
     <Container sx={{ pt: 4, px: { xs: 2, md: 4 } }} >
       <Typography variant="h5" fontWeight={700}>
@@ -141,23 +190,19 @@ export function RelatoriosPage() {
           Vendas por período
         </Typography>
 
-        <Box
-          sx={{
-            height: 140,
-            borderRadius: 2,
-            background:
-              "linear-gradient(180deg, rgba(25,118,210,.15) 0%, rgba(25,118,210,.05) 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <TrendingUpOutlined
-            sx={{
-              fontSize: 64,
-              color: "#1976d2",
-            }}
-          />
+        <Box width="100%" height={250}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data}>
+              <XAxis dataKey="dia" />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="vendas"
+                stroke="#1976d2"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </Box>
       </Card>
 
@@ -186,12 +231,24 @@ export function RelatoriosPage() {
             display="flex"
             justifyContent="center"
           >
-            <ShoppingBagOutlined
-              sx={{
-                fontSize: 80,
-                color: "#6c63ff",
-              }}
-            />
+
+            <ResponsiveContainer width={200} height={140}>
+              <PieChart>
+                <Pie
+                  data={data2}
+                  dataKey="value"
+                  outerRadius={70}
+                >
+                  {data.map((_, index) => (
+                    <Cell
+                      key={index}
+                      fill={COLORS[index]}
+                    />
+                  ))}
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
+
           </Box>
         </Card>
 
@@ -210,67 +267,33 @@ export function RelatoriosPage() {
             Por status
           </Typography>
 
-          <Stack spacing={1}>
-            <Box>
-              <Typography variant="body2">
-                Entregue
-              </Typography>
-
-              <LinearProgress
-                value={90}
-                variant="determinate"
-                color="success"
-                sx={{ height: 6, borderRadius: 3 }}
+          <ResponsiveContainer width="100%" height={140}>
+            <BarChart
+              layout="vertical"
+              data={data3}
+              barSize={18}
+            >
+              <YAxis
+                type="category"
+                dataKey="status"
+                axisLine={false}
+                tickLine={false}
               />
-            </Box>
+              <Bar
+                dataKey="total"
+                fill="#4CAF50"
+                radius={[0, 10, 10, 0]}
+              >
 
-            <Box>
-              <Typography variant="body2">
-                Atendimento
-              </Typography>
-
-              <LinearProgress
-                value={60}
-                variant="determinate"
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                }}
-              />
-            </Box>
-
-            <Box>
-              <Typography variant="body2">
-                Pendente
-              </Typography>
-
-              <LinearProgress
-                value={40}
-                variant="determinate"
-                color="warning"
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                }}
-              />
-            </Box>
-
-            <Box>
-              <Typography variant="body2">
-                Cancelado
-              </Typography>
-
-              <LinearProgress
-                value={15}
-                variant="determinate"
-                color="error"
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                }}
-              />
-            </Box>
-          </Stack>
+                {data3.map((_, index) => (
+                  <Cell
+                    key={index}
+                    fill={COLORS[index]}
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
         </Card>
       </Box>
 
