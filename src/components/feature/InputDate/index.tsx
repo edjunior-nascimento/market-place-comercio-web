@@ -5,6 +5,7 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { ptBR } from "@mui/x-date-pickers/locales";
 
 dayjs.locale("pt-br");
 
@@ -18,7 +19,11 @@ export const InputDate = ({
     onChange,
 }: InputDateProps) => {
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="pt-br" >
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="pt-br"
+            localeText={
+                ptBR.components.MuiLocalizationProvider.defaultProps.localeText
+            }
+        >
             <DatePicker
                 value={value}
                 onChange={onChange}
@@ -47,6 +52,16 @@ export const InputDate = ({
                             },
                         },
                     },
+
+                    day: {
+                        sx: {
+                            "&.Mui-disabled": {
+                                color: "#BDBDBD",
+                                opacity: 1,
+                            },
+                        },
+                    },
+
                     toolbar: {
                         hidden: true,
                     },

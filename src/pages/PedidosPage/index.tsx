@@ -9,12 +9,14 @@ import { useNavigate } from "react-router-dom";
 import { CupomPedido } from "../../components/layouts/CupomPedido";
 import { useReactToPrint } from "react-to-print";
 import { ModelMenu } from "../../components/feature/ModelMenu";
-import { CheckOutlined, ChevronRightOutlined, CloseOutlined, LocalPrintshopOutlined, LocalShippingOutlined, OpenInNew, ReceiptLongOutlined } from "@mui/icons-material";
+import { CheckOutlined, ChevronRightOutlined, CloseOutlined, FormatListBulleted, LocalPrintshopOutlined, LocalShippingOutlined, OpenInNew, ReceiptLongOutlined } from "@mui/icons-material";
 import { Label } from "../../components/feature/Label";
 import { formatarMomento } from "../../util/momento.formatter";
 import { getStatus } from "../../util/status";
 import { InputDate } from "../../components/feature/InputDate";
 import dayjs, { Dayjs } from "dayjs";
+import { StatusCard } from "../../components/layouts/StatusCard";
+import { StatusEnum } from "../../enum/status.enum";
 
 
 export function PedidosPage() {
@@ -79,6 +81,15 @@ export function PedidosPage() {
             onChange={setDate}
           />
         </Box>
+        <Box sx={{ display: "flex", flexDirection: "row", gap: 1, mt: 1, flexWrap: "wrap" }}>
+          <StatusCard title="Total" value={compras.length} icon={<FormatListBulleted />} iconColor="#4CAF50" iconBg="#E8F5E9" />
+          <StatusCard title={getStatus(StatusEnum.PENDENTE).label} value={compras.filter(c => c.status === StatusEnum.PENDENTE).length} icon={getStatus(StatusEnum.PENDENTE).icon} iconColor={getStatus(StatusEnum.PENDENTE).color} iconBg={getStatus(StatusEnum.PENDENTE).color} />
+          <StatusCard title={getStatus(StatusEnum.PREPARANDO).label} value={compras.filter(c => c.status === StatusEnum.PREPARANDO).length} icon={getStatus(StatusEnum.PREPARANDO).icon} iconColor={getStatus(StatusEnum.PREPARANDO).color} iconBg={getStatus(StatusEnum.PREPARANDO).color} />
+          <StatusCard title={getStatus(StatusEnum.ENVIADO).label} value={compras.filter(c => c.status === StatusEnum.ENVIADO).length} icon={getStatus(StatusEnum.ENVIADO).icon} iconColor={getStatus(StatusEnum.ENVIADO).color} iconBg={getStatus(StatusEnum.ENVIADO).color} />
+          <StatusCard title={getStatus(StatusEnum.ENTREGUE).label} value={compras.filter(c => c.status === StatusEnum.ENTREGUE).length} icon={getStatus(StatusEnum.ENTREGUE).icon} iconColor={getStatus(StatusEnum.ENTREGUE).color} iconBg={getStatus(StatusEnum.ENTREGUE).color} />
+          <StatusCard title={getStatus(StatusEnum.CANCELADO).label} value={compras.filter(c => c.status === StatusEnum.CANCELADO).length} icon={getStatus(StatusEnum.CANCELADO).icon} iconColor={getStatus(StatusEnum.CANCELADO).color} iconBg={getStatus(StatusEnum.CANCELADO).color} />
+        </Box>
+<hr/>
 
         {
           loading ? (
