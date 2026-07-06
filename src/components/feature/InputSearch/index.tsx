@@ -8,7 +8,7 @@ interface InputSearchProps {
 
 export function InputSearch({ pesquisa, setPesquisa }: InputSearchProps) {  
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', borderRadius: '50px', gap:'5px', border:'1px solid #DDD'}} px={2} py={1}>
+    <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', borderRadius: '50px', gap:'5px', border:'1px solid #DDD', width: 'stretch'}} px={2} py={1}>
       <Search />
       <InputBase 
         placeholder="Pesquisar" 

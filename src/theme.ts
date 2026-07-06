@@ -23,9 +23,6 @@ const theme = createTheme({
       secondary: '#B50303',
       disabled: '#000000dd',
     },
-    grey: {
-      400: '#BDBDBD',
-    },
   },
   components: {
     MuiTypography: {
@@ -76,7 +73,7 @@ const theme = createTheme({
         root: {
           borderRadius: '50px',
           boxShadow: 'none',
-          whiteSpace: 'nowrap', 
+          whiteSpace: 'nowrap',
           textTransform: 'capitalize'
         },
         containedPrimary: {
@@ -124,11 +121,11 @@ const theme = createTheme({
       },
     },
     MuiBottomNavigationAction: {
-        styleOverrides: {
-          root: {
-            color: '#000000',
-          },
+      styleOverrides: {
+        root: {
+          color: '#000000',
         },
+      },
     },
     MuiDrawer: {
       styleOverrides: {

@@ -1,13 +1,15 @@
 import { forwardRef } from "react";
 import { CompraType } from "../../../types/compra.type";
+import { formatarTelefone } from "../../../util/telefone.formatter";
 
 
 interface Props {
-    compra: CompraType;
+    compra: CompraType | null;
 }
 
 export const CupomPedido = forwardRef<HTMLDivElement, Props>(
     ({ compra }, ref) => {
+        if (!compra) return null;
         return (
             <div
                 ref={ref}
@@ -25,9 +27,11 @@ export const CupomPedido = forwardRef<HTMLDivElement, Props>(
                 <hr />
 
                 <p>
-                    <strong>Status:</strong>
+                    <strong>CLIENTE:</strong>
                     <br />
-                    {compra.status}
+                    {compra.endereco.nome}
+                    <br />
+                    {formatarTelefone(compra.endereco.telefone)}
                 </p>
 
                 <hr />
@@ -59,11 +63,6 @@ export const CupomPedido = forwardRef<HTMLDivElement, Props>(
                 <h3>ENTREGA</h3>
 
                 <p>
-                    {compra.endereco.nome}
-                    <br />
-                    {compra.endereco.telefone}
-                    (88) 99909-1234
-                    <br />
                     {compra.endereco.endereco} {compra.endereco.numero} - {compra.endereco.bairro}
                     <br />
                     {compra.endereco.referencia ? `Ref: ${compra.endereco.referencia}` : ""}
@@ -99,7 +98,7 @@ export const CupomPedido = forwardRef<HTMLDivElement, Props>(
                     }}
                 >
                     <span>Taxa</span>
-                    <strong>{`R$ ${compra.taxas.toFixed(2)}`}</strong>
+                    <strong>{`+R$ ${compra.taxas ? compra.taxas.toFixed(2) : "0.00"}`}</strong>
                 </div>
 
                 <div
@@ -109,7 +108,7 @@ export const CupomPedido = forwardRef<HTMLDivElement, Props>(
                     }}
                 >
                     <span>Desconto</span>
-                    <strong>{`-R$ ${compra.cupom?.valorDesconto.toFixed(2)}`}</strong>
+                    <strong>{`-R$ ${compra.cupom ? compra.cupom.valorDesconto.toFixed(2) : "0.00"}`}</strong>
 
                 </div>
 
