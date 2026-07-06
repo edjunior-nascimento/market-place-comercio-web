@@ -5,5 +5,6 @@ export interface EntregaType {
     telefone: string;
     endereco: string;
     numero: string;
+    bairro: string;
     referencia: string;
 }

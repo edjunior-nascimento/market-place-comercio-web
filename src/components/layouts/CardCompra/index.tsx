@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 import { ModelMenu } from "../../feature/ModelMenu";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
-import {CupomPedido} from "../../../service/CupomPedido";
+import { CupomPedido } from "../CupomPedido";
 
 type CardCompraProps = {
     compra: CompraType;
@@ -22,10 +22,13 @@ export default function CardCompra({ compra }: CardCompraProps) {
 
     const cupomRef = useRef<HTMLDivElement>(null);
 
+
+    const printRef = useRef<HTMLDivElement>(null);
+
     const handlePrint = useReactToPrint({
-        contentRef: cupomRef,
-        documentTitle: "pedido-001",
+        contentRef: printRef,
     });
+
 
 
     const getStatus = (status: StatusEnum) => {
@@ -111,11 +114,14 @@ export default function CardCompra({ compra }: CardCompraProps) {
 
                 </Box>
             </Box>
-            
-<div style={{ display: "none" }}>
-        <CupomPedido ref={cupomRef} />
-      </div>
 
+            <div style={{ display: "none" }}>
+                <CupomPedido
+                    ref={printRef}
+                    compra={compra}
+                />
+            </div>
+            
             <ModelMenu
                 itens={
                     [
@@ -124,7 +130,7 @@ export default function CardCompra({ compra }: CardCompraProps) {
                         { label: 'Enviar para Entrega', descricao: 'Alterar o status para em processo de Entrega', icone: <LocalShippingOutlined />, onClick: () => { setOpen(false) } },
                         { label: 'Finalizar Pedido', descricao: 'Concluir o atendimento do Pedido', icone: <CheckOutlined />, onClick: () => { setOpen(false) } },
                         { label: 'Cancelar Pedido', descricao: 'Cancelar o atendimento do Pedido', icone: <CloseOutlined />, onClick: () => { setOpen(false) } },
-                        { label: 'Imprimir', descricao: 'Imprimir detalhes do pedido', icone: <LocalPrintshopOutlined />, onClick: () => {handlePrint(); setOpen(false); } },
+                        { label: 'Imprimir', descricao: 'Imprimir detalhes do pedido', icone: <LocalPrintshopOutlined />, onClick: () => { handlePrint(); setOpen(false);}},
                     ]}
                 open={open}
                 onClose={() => setOpen(false)} />
