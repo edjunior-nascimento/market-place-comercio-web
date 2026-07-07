@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
+    Alert,
     Box,
     Button,
     Card,
@@ -18,22 +19,28 @@ import {
 } from "@mui/material";
 import { Add, Delete, DeleteOutlined, Edit, EditOutlined } from "@mui/icons-material";
 import { Header } from "../../components/layouts/Header";
+import CategoriaService from "../../service/categoria.service";
+import { CategoriaType } from "../../types/categoria.type";
 
-type Categoria = {
-    id: number;
-    nome: string;
-};
+
 
 export function CategoriaPage() {
-    const [categorias, setCategorias] = useState<Categoria[]>([
-        { id: 1, nome: "Bebidas" },
-        { id: 2, nome: "Lanches" },
-    ]);
+    const [categorias, setCategorias] = useState<CategoriaType[]>([]);
 
     const [open, setOpen] = useState(false);
     const [nome, setNome] = useState("");
     const [categoriaEditando, setCategoriaEditando] =
-        useState<Categoria | null>(null);
+        useState<CategoriaType | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLoading(true);
+        async function loadData() {
+            await listarCategorias();
+        }
+        loadData();
+    }, []);
 
     const abrirNovaCategoria = () => {
         setCategoriaEditando(null);
@@ -41,45 +48,78 @@ export function CategoriaPage() {
         setOpen(true);
     };
 
-    const editarCategoria = (categoria: Categoria) => {
+    const editarCategoria = (categoria: CategoriaType) => {
         setCategoriaEditando(categoria);
         setNome(categoria.nome);
         setOpen(true);
     };
 
+    async function listarCategorias() {
+        CategoriaService.listar()
+            .then(response => {
+                setCategorias(response);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar categorias', error);
+                setError("Erro ao buscar categorias");
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
     const salvarCategoria = () => {
         if (!nome.trim()) return;
 
         if (categoriaEditando) {
-            setCategorias((prev) =>
-                prev.map((c) =>
-                    c.id === categoriaEditando.id
-                        ? { ...c, nome }
-                        : c
-                )
-            );
+            CategoriaService.editar({ ...categoriaEditando, nome })
+                .then((categoriaAtualizada) => {
+                    setCategorias((prev) =>
+                        prev.map((c) =>
+                            c.id === categoriaAtualizada.id
+                                ? categoriaAtualizada
+                                : c
+                        )
+                    );
+                })
+                .catch((error) => {
+                    console.error("Erro ao editar categoria", error);
+                    setError("Erro ao editar categoria");
+                });
         } else {
-            setCategorias((prev) => [
-                ...prev,
-                {
-                    id: Date.now(),
-                    nome,
-                },
-            ]);
+            CategoriaService.adicionar({ id: "", nome })
+                .then((novaCategoria) => {
+                    setCategorias((prev) => [...prev, novaCategoria]);
+                })
+                .catch((error) => {
+                    console.error("Erro ao adicionar categoria", error);
+                    setError("Erro ao adicionar categoria");
+                });
         }
-
         setOpen(false);
     };
 
     const excluirCategoria = (id: number) => {
-        setCategorias((prev) =>
-            prev.filter((c) => c.id !== id)
-        );
+        CategoriaService.deletar(id)
+            .then(() => {
+                setCategorias((prev) =>
+                    prev.filter((c) => Number(c.id) !== id)
+                );
+            })
+            .catch((error) => {
+                setError(error.response?.data?.message || "Erro ao excluir categoria");
+            });
     };
 
     return (
         <Container sx={{ padding: '10px' }}>
-        <Header link="/produtos" showCartButton={false} />
+            <Header link="/produtos" showCartButton={false} />
+
+            {error && (
+                <Alert severity="error" onClose={() => setError(null)} sx={{ mb: 2 }}>
+                    {error}
+                </Alert>
+            )}
 
             <Box
                 sx={{
@@ -91,11 +131,11 @@ export function CategoriaPage() {
             >
                 <Box
                     sx={{
-                        display:"flex",
-                        flexDirection:"column",
+                        display: "flex",
+                        flexDirection: "column",
                         borderBottom: '1px solid #AEAEAE',
-                        gap:1,
-                        paddingBottom:3
+                        gap: 1,
+                        paddingBottom: 3
                     }}
                 >
                     <Typography variant="h5">
@@ -109,7 +149,7 @@ export function CategoriaPage() {
 
                 <List
                     sx={{
-                        px:1
+                        px: 1
                     }}
                 >
                     {categorias.map((categoria) => (
@@ -129,7 +169,7 @@ export function CategoriaPage() {
                                     <IconButton
                                         color="error"
                                         onClick={() =>
-                                            excluirCategoria(categoria.id)
+                                            excluirCategoria(Number(categoria.id))
                                         }
                                     >
                                         <DeleteOutlined />
@@ -141,7 +181,7 @@ export function CategoriaPage() {
                         </ListItem>
                     ))}
                 </List>
-                <Button variant="text" sx={{color:"#2e17b1"}} onClick={abrirNovaCategoria}><Add /> Adicionar Categoria</Button>
+                <Button variant="text" sx={{ color: "#2e17b1" }} onClick={abrirNovaCategoria}><Add /> Adicionar Categoria</Button>
             </Box>
 
             <Dialog
@@ -162,7 +202,7 @@ export function CategoriaPage() {
                         fullWidth
                         label="Nome da Categoria"
                         value={nome}
-                        onChange={(e) => setNome(e.target.value)}
+                        onChange={(e) => setNome(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
                         margin="normal"
                     />
                 </DialogContent>

@@ -254,7 +254,7 @@ app.get('/api/cupons/:codigo', (req, res) => {
   });
 });
 
-
+//CATEGORIAS
 app.get('/api/categorias', (req, res) => {      
   const filePath = path.join(__dirname, 'json/categorias.json');
 
@@ -275,6 +275,185 @@ app.get('/api/categorias', (req, res) => {
         status: "success",
         message: "Categorias retornadas com sucesso",
         data: categorias
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar categorias",
+        data: null
+      });
+    }
+  });
+});
+
+app.post('/api/categorias', (req, res) => {
+  const filePath = path.join(__dirname, 'json/categorias.json');
+  const newCategoria = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados das categorias",
+        data: null
+      });
+    }
+
+    try {
+      const categorias = JSON.parse(data);
+      const maxId = categorias.reduce((max, categoria) => Math.max(max, categoria.id), 0);
+      newCategoria.id = maxId + 1;
+      categorias.push(newCategoria);
+
+      fs.writeFile(filePath, JSON.stringify(categorias, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao salvar a nova categoria",
+            data: null
+          });
+        }
+
+        return res.status(201).json({
+          code: 201,
+          status: "success",
+          message: "Categoria adicionada com sucesso",
+          data: newCategoria
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar categorias",
+        data: null
+      });
+    }
+  });
+});
+
+app.put('/api/categorias/:id', (req, res) => {
+  const filePath = path.join(__dirname, 'json/categorias.json');
+  const { id } = req.params;
+  const updatedCategoria = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados das categorias",
+        data: null
+      });
+    }
+
+    try {
+      const categorias = JSON.parse(data);
+      const index = categorias.findIndex(c => c.id === parseInt(id));
+      if (index === -1) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Categoria não encontrada",
+          data: null
+        });
+      }
+
+      categorias[index] = { ...categorias[index], ...updatedCategoria };
+
+      fs.writeFile(filePath, JSON.stringify(categorias, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao atualizar a categoria",
+            data: null
+          });
+        }
+
+        return res.status(200).json({
+          code: 200,
+          status: "success",
+          message: "Categoria atualizada com sucesso",
+          data: categorias[index]
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar categorias",
+        data: null
+      });
+    }
+  });
+});
+
+app.delete('/api/categorias/:id', (req, res) => {
+  const filePath = path.join(__dirname, 'json/categorias.json');
+  const { id } = req.params;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados das categorias",
+        data: null
+      });
+    }
+
+    try {
+      const categorias = JSON.parse(data);
+
+      //verificar no cateforia do produtor (produtos.json) se existe algum produto com essa categoria, se sim, não permitir a exclusão
+      const produtosFilePath = path.join(__dirname, 'json/produtos.json');
+      const produtosData = fs.readFileSync(produtosFilePath, 'utf8');
+      const produtos = JSON.parse(produtosData);
+      const categoriaEmUso = produtos.some(p => p.categoria === parseInt(id));
+      if (categoriaEmUso) {
+        return res.status(400).json({
+          code: 400,
+          status: "error",
+          message: "Não é possível excluir a categoria, existem produtos associados a ela",
+          data: null
+        });
+      }
+
+      const index = categorias.findIndex(c => c.id === parseInt(id));
+      if (index === -1) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Categoria não encontrada",
+          data: null
+        });
+      }
+
+      categorias.splice(index, 1);
+
+      fs.writeFile(filePath, JSON.stringify(categorias, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao excluir a categoria",
+            data: null
+          });
+        }
+
+        return res.status(200).json({
+          code: 200,
+          status: "success",
+          message: "Categoria excluída com sucesso",
+          data: null
+        });
       });
 
     } catch (parseError) {

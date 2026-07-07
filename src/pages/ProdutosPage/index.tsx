@@ -59,7 +59,8 @@ export function ProdutosPage() {
   }
 
   const filtroProdutos = produtos.filter(produto =>
-    produto.nome.toLowerCase().includes(pesquisa.toLowerCase())
+    produto.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(pesquisa.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')) ||
+    produto.id.toString().includes(pesquisa)
   );
 
   const scrollCategoria = (id: string) => {
@@ -102,12 +103,12 @@ export function ProdutosPage() {
             display: 'flex',
             flexDirection: 'row',
             gap: '10px',
-            justifyContent:'end'
+            justifyContent: 'end'
           }} px={1} py={1}>
-          <Button variant="outlined" size="small"  startIcon={<Edit />} onClick={()=>navigate('/categoria')}>
+          <Button variant="outlined" size="small" startIcon={<Edit />} onClick={() => navigate('/categoria')}>
             Editar Categorias
           </Button>
-          <Button variant="outlined" size="small" startIcon={<Add />} onClick={()=>navigate('/produto')}>
+          <Button variant="outlined" size="small" startIcon={<Add />} disabled={categorias.length === 0} onClick={() => navigate('/produto')}>
             Adicionar Produto
           </Button>
         </Box>
@@ -118,15 +119,17 @@ export function ProdutosPage() {
             ) : (
               categorias.map((categoria) => (
                 <Box key={categoria.id}>
-                  <Typography
-                    py={2}
-                    variant="h5"
-                    ref={(el: HTMLElement | null) => {
-                      if (el) categoriaRefs.current[categoria.id] = el;
-                    }}
-                  >
-                    {categoria.nome}
-                  </Typography>
+                  {!(pesquisa.length > 0) &&
+                    <Typography
+                      py={2}
+                      variant="h5"
+                      ref={(el: HTMLElement | null) => {
+                        if (el) categoriaRefs.current[categoria.id] = el;
+                      }}
+                    >
+                      {categoria.nome}
+                    </Typography>
+                  }
                   <Box
                     sx={{
                       display: 'flex',
