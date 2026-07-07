@@ -1,6 +1,7 @@
 import { ArrowForward } from "@mui/icons-material";
 import {Box, Button, Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import { EntregaType } from "../../../types/entrega";
+import { formatarTelefone } from "../../../util/telefone.formatter";
 
 
 type CardEntregaProps = {
@@ -43,7 +44,7 @@ export function CardEntrega(
           {entrega.nome}
         </Typography>
         <Typography variant="subtitle1" lineHeight={1}>
-          {entrega.telefone}
+          {formatarTelefone(entrega.telefone)}
         </Typography>
         <Typography variant="subtitle1" lineHeight={1}>
           {entrega.endereco}, {entrega.numero}

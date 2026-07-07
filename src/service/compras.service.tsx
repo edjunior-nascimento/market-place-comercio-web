@@ -7,6 +7,9 @@ const ComprasService = {
     },
     getById(id: string): Promise<CompraType> {
         return api.get<CompraType>(`/compra/${id}`).then((res:any) => res.data.data)
+    },
+    getByDate(data: string): Promise<CompraType[]> {
+        return api.get<CompraType[]>(`/compras/${data}`).then((res:any) => res.data.data)
     }
 }
 

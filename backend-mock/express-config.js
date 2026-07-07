@@ -120,6 +120,50 @@ app.get('/api/compra/:id', (req, res) => {
   });
 });
 
+app.get('/api/compras/:date', (req, res) => {      
+  const filePath = path.join(__dirname, 'json/compras.json');
+  const { date } = req.params;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados das compras",
+        data: null
+      });
+    }
+
+    try {
+      const compras = JSON.parse(data);
+      const compra = compras.filter(c => c.data.split('T')[0] === date);
+      if (!compra) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Compra não encontrada",
+          data: null
+        });
+      }
+
+      return res.status(200).json({
+        code: 200,
+        status: "success",
+        message: "Compra retornado com sucesso",
+        data: compra
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar compras",
+        data: null
+      });
+    }
+  });
+});
+
 app.get('/api/produto/:id', (req, res) => {      
   const filePath = path.join(__dirname, 'json/produtos.json');
   const { id } = req.params;

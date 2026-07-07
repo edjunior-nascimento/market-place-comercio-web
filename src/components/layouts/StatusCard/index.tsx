@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface StatusCardProps {
     title: string;
-    value: number;
+    value: number | undefined;
     icon: ReactNode;
     iconColor: string;
     iconBg: string;
@@ -54,13 +54,13 @@ export const StatusCard = ({
             <Box>
                 <Typography
                     sx={{
-                        fontSize: 24,
+                        fontSize: 22,
                         fontWeight: 600,
                         lineHeight: 1,
                         color: "#111827",
                     }}
                 >
-                    {value}
+                    {value ?? 0}
                 </Typography>
 
                 <Typography

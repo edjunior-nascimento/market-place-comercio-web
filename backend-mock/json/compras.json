@@ -70,7 +70,7 @@
         "taxas": 8.0,
         "total": 94.3,
         "status": "PREPARANDO",
-        "data": "2026-06-20"
+        "data": "2026-07-07T20:30:45Z"
     },
     {
         "id": "2",
@@ -114,7 +114,7 @@
         "taxas": 5.0,
         "total": 37.0,
         "status": "ENVIADO",
-        "data": "2026-06-19"
+        "data": "2026-07-03T14:30:00Z"
     },
     {
         "id": "3",
@@ -156,7 +156,7 @@
         "taxas": 4.5,
         "total": 29.5,
         "status": "ENTREGUE",
-        "data": "2026-06-18"
+        "data": "2026-07-03T14:30:00Z"
     },
     {
         "id": "4",
@@ -206,6 +206,309 @@
         "taxas": 3.5,
         "total": 22.5,
         "status": "CANCELADO",
-        "data": "2026-06-17"
+        "data": "2026-07-07T20:30:45Z"
+    },
+    {
+        "id": "5",
+        "pedidos": [
+            {
+                "id": "p-6",
+                "produto": {
+                    "id": "prd-6",
+                    "imagens": [
+                        "https://example.com/imagem-pizza.jpg"
+                    ],
+                    "nome": "Pizza Margherita",
+                    "descricao": "Pizza com molho de tomate, mussarela e manjericão",
+                    "preco": 45.0,
+                    "quantidade": 12,
+                    "componentes": [
+                        "massa",
+                        "molho de tomate",
+                        "mussarela",
+                        "manjericão"
+                    ],
+                    "categoria": 6
+                },
+                "quantidade": 1,
+                "precoTotal": 45.0
+            }
+        ],
+        "endereco": {
+            "id": "e-5",
+            "nome": "Carlos Eduardo",
+            "telefone": "11995554433",
+            "endereco": "Av. Paulista",
+            "numero": "1500",
+            "referencia": "Próximo ao MASP"
+        },
+        "pagamento": "CARTAO",
+        "cupom": null,
+        "observacao": null,
+        "troco": null,
+        "subTotal": 45.0,
+        "taxas": 6.0,
+        "total": 51.0,
+        "status": "PREPARANDO",
+        "data": "2026-07-06T14:30:00Z"
+    },
+    {
+        "id": "6",
+        "pedidos": [
+            {
+                "id": "p-7",
+                "produto": {
+                    "id": "prd-7",
+                    "imagens": [
+                        "https://example.com/imagem-sanduiche.jpg"
+                    ],
+                    "nome": "Sanduíche Natural",
+                    "descricao": "Sanduíche com peito de peru, alface e tomate",
+                    "preco": 28.0,
+                    "quantidade": 18,
+                    "componentes": [
+                        "pão integral",
+                        "peito de peru",
+                        "alface",
+                        "tomate"
+                    ],
+                    "categoria": 7
+                },
+                "quantidade": 2,
+                "precoTotal": 56.0
+            }
+        ],
+        "endereco": {
+            "id": "e-6",
+            "nome": "Juliana Pereira",
+            "telefone": "11993332211",
+            "endereco": "Rua das Palmeiras",
+            "numero": "75",
+            "referencia": null
+        },
+        "pagamento": "DINHEIRO",
+        "cupom": null,
+        "observacao": null,
+        "troco": 20,
+        "subTotal": 56.0,
+        "taxas": 5.5,
+        "total": 61.5,
+        "status": "ENTREGUE",
+        "data": "2026-07-01T14:30:00Z"
+    },
+    {
+        "id": "7",
+        "pedidos": [
+            {
+                "id": "p-8",
+                "produto": {
+                    "id": "prd-8",
+                    "imagens": [
+                        "https://example.com/imagem-sushi.jpg"
+                    ],
+                    "nome": "Sushi Combo",
+                    "descricao": "Combo com 12 peças de sushi variados",
+                    "preco": 60.0,
+                    "quantidade": 25,
+                    "componentes": [
+                        "arroz",
+                        "peixe",
+                        "algas"
+                    ],
+                    "categoria": 8
+                },
+                "quantidade": 1,
+                "precoTotal": 60.0
+            }
+        ],
+        "endereco": {
+            "id": "e-7",
+            "nome": "Rafael Gomes",
+            "telefone": "11998887766",
+            "endereco": "Av. das Nações",
+            "numero": "300",
+            "referencia": null
+        },
+        "pagamento": "PIX",
+        "cupom": null,
+        "observacao": null,
+        "troco": null,
+        "subTotal": 60.0,
+        "taxas": 7.0,
+        "total": 67.0,
+        "status": "ENVIADO",
+        "data": "2026-07-04T14:30:00Z"
+    },
+    {
+        "id": "8",
+        "pedidos": [
+            {
+                "id": "p-9",
+                "produto": {
+                    "id": "prd-9",
+                    "imagens": [
+                        "https://example.com/imagem-lasanha.jpg"
+                    ],
+                    "nome": "Lasanha à Bolonhesa",
+                    "descricao": "Lasanha com molho bolonhesa e queijo gratinado",
+                    "preco": 50.0,
+                    "quantidade": 20,
+                    "componentes": [
+                        "massa",
+                        "molho bolonhesa",
+                        "queijo"
+                    ],
+                    "categoria": 9
+                },
+                "quantidade": 1,
+                "precoTotal": 50.0
+            }
+        ],
+        "endereco": {
+            "id": "e-8",
+            "nome": "Patrícia Santos",
+            "telefone": "11997776655",
+            "endereco": "Rua do Sol",
+            "numero": "88",
+            "referencia": null
+        },
+        "pagamento": "CARTAO",
+        "cupom": null,
+        "observacao": null,
+        "troco": null,
+        "subTotal": 50.0,
+        "taxas": 6.5,
+        "total": 56.5,
+        "status": "PREPARANDO",
+        "data": "2026-07-03T14:30:00Z"
+    },
+    {
+        "id": "9",
+        "pedidos": [
+            {
+                "id": "p-10",
+                "produto": {
+                    "id": "prd-10",
+                    "imagens": [
+                        "https://example.com/imagem-espaguete.jpg"
+                    ],
+                    "nome": "Espaguete à Carbonara",
+                    "descricao": "Espaguete com molho carbonara e bacon crocante",
+                    "preco": 42.0,
+                    "quantidade": 15,
+                    "componentes": [
+                        "massa",
+                        "molho carbonara",
+                        "bacon"
+                    ],
+                    "categoria": 10
+                },
+                "quantidade": 1,
+                "precoTotal": 42.0
+            }
+        ],
+        "endereco": {
+            "id": "e-9",
+            "nome": "Lucas Ferreira",
+            "telefone": "11996665544",
+            "endereco": "Av. Central",
+            "numero": "500",
+            "referencia": null
+        },
+        "pagamento": "DINHEIRO",
+        "cupom": null,
+        "observacao": null,
+        "troco": 50,
+        "subTotal": 42.0,
+        "taxas": 5.0,
+        "total": 47.0,
+        "status": "ENTREGUE",
+        "data": "2026-07-02T14:30:00Z"
+    },
+    {
+        "id": "10",
+        "pedidos": [
+            {
+                "id": "p-11",
+                "produto": {
+                    "id": "prd-11",
+                    "imagens": [
+                        "https://example.com/imagem-frango.jpg"
+                    ],
+                    "nome": "Frango Grelhado",
+                    "descricao": "Peito de frango grelhado com ervas finas",
+                    "preco": 35.0,
+                    "quantidade": 20,
+                    "componentes": [
+                        "frango",
+                        "ervas finas"
+                    ],
+                    "categoria": 11
+                },
+                "quantidade": 1,
+                "precoTotal": 35.0
+            }
+        ],
+        "endereco": {
+            "id": "e-10",
+            "nome": "Mariana Oliveira",
+            "telefone": "11995553322",
+            "endereco": "Rua das Acácias",
+            "numero": "150",
+            "referencia": null
+        },
+        "pagamento": "PIX",
+        "cupom": null,
+        "observacao": null,
+        "troco": null,
+        "subTotal": 35.0,
+        "taxas": 4.5,
+        "total": 39.5,
+        "status": "ENVIADO",
+        "data": "2026-07-01T14:30:00Z"
+    },
+    {
+        "id": "11",
+        "pedidos": [
+            {
+                "id": "p-12",
+                "produto": {
+                    "id": "prd-12",
+                    "imagens": [
+                        "https://example.com/imagem-salada-frutas.jpg"
+                    ],
+                    "nome": "Salada de Frutas",
+                    "descricao": "Salada de frutas frescas com mel e hortelã",
+                    "preco": 20.0,
+                    "quantidade": 25,
+                    "componentes": [
+                        "frutas variadas",
+                        "mel",
+                        "hortelã"
+                    ],
+                    "categoria": 12
+                },
+                "quantidade": 1,
+                "precoTotal": 20.0
+            }
+        ],
+        "endereco": {
+            "id": "e-11",
+            "nome": "Gabriel Costa",
+            "telefone": "11994442211",
+            "endereco": "Av. das Flores",
+            "numero": "250",
+            "referencia": null
+        },
+        "pagamento": "CARTAO",
+        "cupom": null,
+        "observacao": null,
+        "troco": null,
+        "subTotal": 20.0,
+        "taxas": 3.0,
+        "total": 23.0,
+        "status": "PENDENTE",
+        "data": "2026-07-01T14:30:00Z"
     }
+
 ]

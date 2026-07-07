@@ -13,7 +13,7 @@ export const getStatus = (status: StatusEnum) => {
         case StatusEnum.PENDENTE:
             return {
                 label: "Pendente",
-                color: "#BCBCBC",
+                color: "#757575",
                 icon: <AccessTimeOutlinedIcon sx={{ fontSize: 24 }} />
             };
 
