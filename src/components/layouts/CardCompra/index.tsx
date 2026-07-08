@@ -11,9 +11,9 @@ import { ModelMenu } from "../../feature/ModelMenu";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { CupomPedido } from "../CupomPedido";
-import { formatarMomento } from "../../../util/momento.formatter";
+import { formatarMomento } from "../../../shared/util/momento.formatter";
 import { Label } from "../../feature/Label";
-import { getStatus } from "../../../util/status";
+import { getStatus } from "../../../shared/util/status";
 
 type CardCompraProps = {
     compra: CompraType;

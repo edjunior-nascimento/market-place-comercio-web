@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import { Add, Delete, DeleteOutlined, Edit, EditOutlined } from "@mui/icons-material";
 import { Header } from "../../components/layouts/Header";
-import CategoriaService from "../../service/categoria.service";
+import CategoriaService from "../../services/categoria.service";
 import { CategoriaType } from "../../types/categoria.type";
 
 

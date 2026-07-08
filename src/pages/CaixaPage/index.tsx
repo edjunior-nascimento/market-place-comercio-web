@@ -24,7 +24,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { StatusCard } from "../../components/layouts/StatusCard";
 import { CardCaixa } from "../../components/layouts/CardCaixa";
 import { AccountBalanceWalletOutlined, ArrowDownwardOutlined, ArrowUpwardOutlined, ChevronRightOutlined, CreditCard, FormatListBulleted, LocalAtm, Pix, RequestQuoteOutlined } from "@mui/icons-material";
-import CaixaService from "../../service/caixa.service";
+import CaixaService from "../../services/caixa.service";
 import { Label } from "../../components/feature/Label";
 
 

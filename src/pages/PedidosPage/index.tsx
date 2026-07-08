@@ -4,20 +4,20 @@ import { useEffect, useRef, useState } from "react";
 import SelectInput from "../../components/feature/SelectInput";
 import CardPedido from "../../components/layouts/CardCompra";
 import { CompraType } from "../../types/compra.type";
-import ComprasService from "../../service/compras.service";
+import ComprasService from "../../services/compras.service";
 import { useNavigate } from "react-router-dom";
 import { CupomPedido } from "../../components/layouts/CupomPedido";
 import { useReactToPrint } from "react-to-print";
 import { ModelMenu } from "../../components/feature/ModelMenu";
 import { CheckOutlined, ChevronRightOutlined, CloseOutlined, CreditCard, FormatListBulleted, LocalAtm, LocalPrintshopOutlined, LocalShippingOutlined, OpenInNew, Pix, ReceiptLongOutlined } from "@mui/icons-material";
 import { Label } from "../../components/feature/Label";
-import { formatarMomento } from "../../util/momento.formatter";
-import { getStatus } from "../../util/status";
+import { formatarMomento } from "../../shared/util/momento.formatter";
+import { getStatus } from "../../shared/util/status";
 import { InputDate } from "../../components/feature/InputDate";
 import dayjs, { Dayjs } from "dayjs";
 import { StatusCard } from "../../components/layouts/StatusCard";
 import { StatusEnum } from "../../enum/status.enum";
-import { formatarTelefone } from "../../util/telefone.formatter";
+import { formatarTelefone } from "../../shared/util/telefone.formatter";
 
 
 export function PedidosPage() {

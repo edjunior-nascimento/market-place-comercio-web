@@ -5,7 +5,7 @@ import ReceiptLongOutlined from "@mui/icons-material/ReceiptLongOutlined";
 import LocalShippingOutlined from "@mui/icons-material/LocalShippingOutlined";
 import CheckCircleOutlined from "@mui/icons-material/CheckCircleOutlined";
 import CancelOutlined from "@mui/icons-material/CancelOutlined";
-import { StatusEnum } from "../enum/status.enum";
+import { StatusEnum } from "../../enum/status.enum";
 
 
 export const getStatus = (status: StatusEnum) => {

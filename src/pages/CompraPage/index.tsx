@@ -6,7 +6,7 @@ import { CardCupom } from "../../components/layouts/CardCupom";
 import { useNavigate, useParams } from "react-router-dom";
 import { Header } from "../../components/layouts/Header";
 import { useEffect, useMemo, useState } from "react";
-import ComprasService from "../../service/compras.service";
+import ComprasService from "../../services/compras.service";
 import { CompraType } from "../../types/compra.type";
 import { StatusEnum } from "../../enum/status.enum";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";

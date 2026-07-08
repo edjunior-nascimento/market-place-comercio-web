@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const app = express();
 const PORT = 3001;
@@ -477,6 +478,59 @@ app.get('/api/compras/:date', (req, res) => {
         code: 500,
         status: "error",
         message: "Erro ao interpretar compras",
+        data: null
+      });
+    }
+  });
+});
+
+//USUARIO
+//validar usuario e senha
+app.post('/api/usuario/login', (req, res) => {      
+  const filePath = path.join(__dirname, 'json/usuarios.json');
+  const { usuario, senha } = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos usuários",
+        data: null
+      });
+    }
+
+    try {
+      const usuarios = JSON.parse(data);
+      const usuarioEncontrado = usuarios.find(u => u.login === usuario && u.senha === senha);
+
+      if (!usuarioEncontrado) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Usuário não encontrado",
+          data: null
+        });
+      }
+
+      const token = crypto.randomBytes(16).toString('hex');
+      const { senha, ...usuarioSemSenha } = usuarioEncontrado;
+
+      return res.status(200).json({
+        code: 200,
+        status: "success",
+        message: "Usuário autenticado com sucesso",
+        data: {
+          ...usuarioSemSenha,
+          token: token
+        }
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar os dados dos usuários",
         data: null
       });
     }

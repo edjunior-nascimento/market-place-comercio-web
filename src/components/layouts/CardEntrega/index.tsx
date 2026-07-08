@@ -1,7 +1,7 @@
 import { ArrowForward } from "@mui/icons-material";
 import {Box, Button, Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import { EntregaType } from "../../../types/entrega";
-import { formatarTelefone } from "../../../util/telefone.formatter";
+import { formatarTelefone } from "../../../shared/util/telefone.formatter";
 
 
 type CardEntregaProps = {

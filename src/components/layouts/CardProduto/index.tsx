@@ -7,7 +7,7 @@ import { DialogConfirmation } from "../../feature/DialogConfirmation";
 import { useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { ModelMenu } from "../../feature/ModelMenu";
-import ProdutoService from "../../../service/produto.service";
+import ProdutoService from "../../../services/produto.service";
 
 
 type CardProdutoProps = {

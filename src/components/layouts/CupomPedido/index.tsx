@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { CompraType } from "../../../types/compra.type";
-import { formatarTelefone } from "../../../util/telefone.formatter";
+import { formatarTelefone } from "../../../shared/util/telefone.formatter";
 
 
 interface Props {

@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "imagem": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "nome": "Administrador",
+        "login": "admin",
+        "email": "admin@admin.com",
+        "senha": "admin",
+        "tipo": "ADMIN",
+        "token": "",
+        "ativo": true
+    },
+    {
+        "id": 2,
+        "imagem": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "nome": "Caixa",
+        "login": "caixa",
+        "email": "caixa@caixa.com",
+        "senha": "caixa",
+        "tipo": "CAIXA",
+        "token": "",
+        "ativo": true
+    },
+    {
+        "id": 3,
+        "imagem": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "nome": "Vendedor",
+        "login": "vendedor",
+        "email": "vendedor@vendedor.com",
+        "senha": "vendedor",
+        "tipo": "VENDEDOR",
+        "token": "",
+        "ativo": true
+    }
+
+]

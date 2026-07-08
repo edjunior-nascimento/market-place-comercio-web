@@ -21,10 +21,10 @@ import {
 } from "@mui/icons-material";
 import { Header } from "../../components/layouts/Header";
 import { useNavigate, useParams } from "react-router-dom";
-import ProdutoService from "../../service/produto.service";
+import ProdutoService from "../../services/produto.service";
 import { ProdutoType } from "../../types/produto.type";
 import { MedidasEnum } from "../../enum/medidas.enum";
-import CategoriaService from "../../service/categoria.service";
+import CategoriaService from "../../services/categoria.service";
 import { CategoriaType } from "../../types/categoria.type";
 
 export function EditeProdutoPage() {
