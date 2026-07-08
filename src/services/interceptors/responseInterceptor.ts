@@ -1,6 +1,6 @@
 import { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
-import { store } from '../../store';
-import { logout } from '../../store/usuario.slice'; 
+import { store } from '../../store/store';
+import { logout } from '../../store/autenticacao.slice'; 
 import { AUTH_TOKEN_STORAGE_KEY } from '../../shared/constants/storageKeys';
 
 export interface NormalizedApiError {

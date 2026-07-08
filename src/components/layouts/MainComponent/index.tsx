@@ -1,4 +1,6 @@
 import { Box, BottomNavigation, BottomNavigationAction, Paper, useMediaQuery, useTheme, Drawer, ListItemButton, List, ListItemIcon, ListItemText } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/autenticacao.slice";
 import { useMemo, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import MonitorOutlined from "@mui/icons-material/MonitorOutlined";
@@ -10,27 +12,29 @@ import Storefront from "@mui/icons-material/Storefront";
 import DescriptionOutlined from "@mui/icons-material/DescriptionOutlined";
 import Logout from "@mui/icons-material/Logout";
 
-const menuItems = [
-  { label: "Pedidos", value: "/pedidos", icon: <ReceiptLongOutlined /> },
-  { label: "Produtos", value: "/produtos", icon: <Inventory2Outlined /> },
-  { label: "Caixa", value: "/caixa", icon: <MonitorOutlined /> },
-  { label: "Relatórios", value: "/relatorios", icon: <DescriptionOutlined /> },
-  { label: "Empresa", value: "/empresa", icon: <Storefront /> },
-  { label: "Usuário", value: "/usuario", icon: <PermIdentityOutlined /> },
-  { label: "Sair", value: "/sair", icon: <Logout /> },
-];
 
 const DRAWER_WIDTH = 250;
 
 export function MainComponent() {
   const navigate = useNavigate();
+    const dispatch = useDispatch();
+
   const location = useLocation();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const value = useMemo(() => location.pathname, [location.pathname]);
+  const menuItems = [
+    { label: "Pedidos", value: "/pedidos", icon: <ReceiptLongOutlined />, onClick: () => { navigate('/pedidos') } },
+    { label: "Produtos", value: "/produtos", icon: <Inventory2Outlined />, onClick: () => { navigate('/produtos') } },
+    { label: "Caixa", value: "/caixa", icon: <MonitorOutlined />, onClick: () => { navigate('/caixa') } },
+    { label: "Relatórios", value: "/relatorios", icon: <DescriptionOutlined />, onClick: () => { navigate('/relatorios') } },
+    { label: "Empresa", value: "/empresa", icon: <Storefront />, onClick: () => { navigate('/empresa') } },
+    { label: "Usuário", value: "/usuario", icon: <PermIdentityOutlined />, onClick: () => { navigate('/usuario') } },
+    { label: "Sair", value: "/sair", icon: <Logout />, onClick: () => { dispatch(logout()) } },
+  ];
 
   return (
-    <Box sx={{ minHeight: "100vh", pb: 7, display: {md: 'flex', sx: 'block'}, flexDirection:{md: 'row', sx: 'column'} }}>
+    <Box sx={{ minHeight: "100vh", pb: 7, display: { md: 'flex', sx: 'block' }, flexDirection: { md: 'row', sx: 'column' } }}>
 
       {isDesktop && (
 
@@ -50,7 +54,7 @@ export function MainComponent() {
             {menuItems.map((item) => (
               <ListItemButton
                 key={item.value}
-                onClick={() => navigate(item.value)}
+                onClick={item.onClick}
                 selected={value === item.value}
                 sx={{
                   display: "flex",
@@ -71,7 +75,7 @@ export function MainComponent() {
                   },
                 }}
               >
-                <ListItemIcon sx={{display:"flex", justifyContent: "center"}}>{item.icon}</ListItemIcon>
+                <ListItemIcon sx={{ display: "flex", justifyContent: "center" }}>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.label} />
               </ListItemButton>
             ))}

@@ -56,7 +56,6 @@ export function CaixaPage() {
         console.log('Buscando compras para a data:', data);
         CaixaService.listar(data)
             .then(response => {
-                console.log('Movimentações recebidas:', response);
                 setMovimentacoes(response);
             })
             .catch(error => {

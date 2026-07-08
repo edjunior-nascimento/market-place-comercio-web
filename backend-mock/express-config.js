@@ -485,10 +485,9 @@ app.get('/api/compras/:date', (req, res) => {
 });
 
 //USUARIO
-//validar usuario e senha
 app.post('/api/usuario/login', (req, res) => {      
   const filePath = path.join(__dirname, 'json/usuarios.json');
-  const { usuario, senha } = req.body;
+  const { login, senha } = req.body;
 
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
@@ -502,28 +501,76 @@ app.post('/api/usuario/login', (req, res) => {
 
     try {
       const usuarios = JSON.parse(data);
-      const usuarioEncontrado = usuarios.find(u => u.login === usuario && u.senha === senha);
+      const usuarioEncontrado = usuarios.find(u => u.login === login && u.senha === senha);
 
       if (!usuarioEncontrado) {
         return res.status(404).json({
           code: 404,
           status: "error",
-          message: "Usuário não encontrado",
+          message: "Usuário ou Senha incorretos",
           data: null
         });
       }
 
       const token = crypto.randomBytes(16).toString('hex');
-      const { senha, ...usuarioSemSenha } = usuarioEncontrado;
-
+      
+      //editar token do usuarioencontrado no arquivo json
+      usuarioEncontrado.token = token;
+      fs.writeFileSync(filePath, JSON.stringify(usuarios, null, 2), 'utf8');
+      
       return res.status(200).json({
         code: 200,
         status: "success",
         message: "Usuário autenticado com sucesso",
         data: {
-          ...usuarioSemSenha,
-          token: token
+          ...usuarioEncontrado,
+          token: token,
+          senha: ""
         }
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar os dados dos usuários",
+        data: null
+      });
+    }
+  });
+});
+
+app.post('/api/usuario/validar', (req, res) => {      
+  const filePath = path.join(__dirname, 'json/usuarios.json');
+  const { token } = req.body;
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos usuários",
+        data: null
+      });
+    }
+
+    try {
+      const usuarios = JSON.parse(data);
+      const usuarioEncontrado = usuarios.find(u => u.token === token);
+
+      if (!usuarioEncontrado) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Token inválido",
+          data: null
+        });
+      }
+
+      return res.status(200).json({
+        code: 200,
+        status: "success",
+        message: "Token válido",
+        data: usuarioEncontrado
       });
 
     } catch (parseError) {

@@ -1,14 +1,25 @@
-import { Avatar, Box, Button, Paper, TextField, Typography } from "@mui/material";
+import { Alert, Avatar, Box, Button, Paper, TextField, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../store/autenticacao.slice";
 
 export function LoginPage() {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [loginUsuario, setLoginUsuario] = useState("");
+  const [senhaUsuario, setSenhaUsuario] = useState("");
+
+  const { loading, error } = useSelector(
+    (state: any) => state.autenticacao
+  )
 
   const handleLogin = () => {
-    navigate('/pedidos');
+    dispatch(login({ login: loginUsuario, senha: senhaUsuario }) as any);
   };
 
   return (
@@ -22,6 +33,7 @@ export function LoginPage() {
         px: 2,
       }}
     >
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -69,6 +81,8 @@ export function LoginPage() {
               placeholder="Login"
               variant="outlined"
               size="small"
+              value={loginUsuario}
+              onChange={(e) => setLoginUsuario(e.target.value)}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "#fff",
@@ -93,6 +107,8 @@ export function LoginPage() {
               placeholder="Senha"
               variant="outlined"
               size="small"
+              value={senhaUsuario}
+              onChange={(e) => setSenhaUsuario(e.target.value)}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   bgcolor: "#fff",
@@ -101,11 +117,18 @@ export function LoginPage() {
               }}
             />
           </Box>
+          {error && (
+            <Alert severity="error" sx={{ mb: 2 }}>
+              {error}
+            </Alert>
+          )}
 
           <Button
             fullWidth
             variant="contained"
             onClick={handleLogin}
+            loading={loading}
+            disabled={loading}
             sx={{
               bgcolor: "#d50000",
               borderRadius: 10,

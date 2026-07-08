@@ -14,7 +14,7 @@ export const api = axios.create({
   },
 });
 
-// attachRequestInterceptor(api);
-// attachResponseInterceptor(api);
+attachRequestInterceptor(api);
+attachResponseInterceptor(api);
 
 export default api;
