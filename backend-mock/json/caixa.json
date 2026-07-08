@@ -1,0 +1,182 @@
+[
+    {
+        "id": "001",
+        "tipo": "ENTRADA",
+        "categoria": "Vendas",
+        "descricao": "Venda de produto A",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:30:00Z",
+        "valor": 150.50
+    },
+    {
+        "id": "002",
+        "tipo": "SAIDA",
+        "categoria": "Fornecedor",
+        "descricao": "Compra de matéria-prima",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:31:00Z",
+        "valor": 500.00
+    },
+    {
+        "id": "003",
+        "tipo": "ENTRADA",
+        "categoria": "Serviços",
+        "descricao": "Consultoria prestada",
+        "pagamento": "DINHEIRO",
+        "data": "2026-07-08T14:32:00Z",
+        "valor": 300.00
+    },
+    {
+        "id": "004",
+        "tipo": "SAIDA",
+        "categoria": "Aluguel",
+        "descricao": "Aluguel do escritório",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:35:00Z",
+        "valor": 1200.00
+    },
+    {
+        "id": "005",
+        "tipo": "ENTRADA",
+        "categoria": "Vendas",
+        "descricao": "Venda de produto B",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:38:00Z",
+        "valor": 275.25
+    },
+    {
+        "id": "006",
+        "tipo": "SAIDA",
+        "categoria": "Utilidades",
+        "descricao": "Conta de água e luz",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:41:00Z",
+        "valor": 350.75
+    },
+    {
+        "id": "007",
+        "tipo": "ENTRADA",
+        "categoria": "Investimentos",
+        "descricao": "Retorno de investimento",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:42:00Z",
+        "valor": 1500.00
+    },
+    {
+        "id": "008",
+        "tipo": "SAIDA",
+        "categoria": "Salários",
+        "descricao": "Pagamento de funcionários",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:45:00Z",
+        "valor": 3000.00
+    },
+    {
+        "id": "009",
+        "tipo": "ENTRADA",
+        "categoria": "Vendas",
+        "descricao": "Venda de produto C",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:47:00Z",
+        "valor": 450.00
+    },
+    {
+        "id": "010",
+        "tipo": "SAIDA",
+        "categoria": "Marketing",
+        "descricao": "Publicidade online",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:48:00Z",
+        "valor": 250.00
+    },
+    {
+        "id": "011",
+        "tipo": "ENTRADA",
+        "categoria": "Clientes",
+        "descricao": "Recebimento de cliente X",
+        "pagamento": "DINHEIRO",
+        "data": "2026-07-08T14:51:00Z",
+        "valor": 800.50
+    },
+    {
+        "id": "012",
+        "tipo": "SAIDA",
+        "categoria": "Transporte",
+        "descricao": "Combustível",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:52:00Z",
+        "valor": 180.00
+    },
+    {
+        "id": "013",
+        "tipo": "ENTRADA",
+        "categoria": "Vendas",
+        "descricao": "Venda de produto D",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:53:00Z",
+        "valor": 620.75
+    },
+    {
+        "id": "014",
+        "tipo": "SAIDA",
+        "categoria": "Manutenção",
+        "descricao": "Reparo de equipamento",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:55:00Z",
+        "valor": 400.00
+    },
+    {
+        "id": "015",
+        "tipo": "ENTRADA",
+        "categoria": "Parceiros",
+        "descricao": "Comissão de vendedor",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:56:00Z",
+        "valor": 550.00
+    },
+    {
+        "id": "016",
+        "tipo": "SAIDA",
+        "categoria": "Impostos",
+        "descricao": "Pagamento de impostos",
+        "pagamento": "PIX",
+        "data": "2026-07-08T14:57:00Z",
+        "valor": 2500.00
+    },
+    {
+        "id": "017",
+        "tipo": "ENTRADA",
+        "categoria": "Vendas",
+        "descricao": "Venda de produto E",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:58:00Z",
+        "valor": 325.00
+    },
+    {
+        "id": "018",
+        "tipo": "SAIDA",
+        "categoria": "Suprimentos",
+        "descricao": "Compra de material de escritório",
+        "pagamento": "CARTAO",
+        "data": "2026-07-08T14:59:00Z",
+        "valor": 200.00
+    },
+    {
+        "id": "019",
+        "tipo": "ENTRADA",
+        "categoria": "Clientes",
+        "descricao": "Recebimento de cliente Y",
+        "pagamento": "PIX",
+        "data": "2026-07-08T15:00:00Z",
+        "valor": 1100.25
+    },
+    {
+        "id": "020",
+        "tipo": "SAIDA",
+        "categoria": "Seguros",
+        "descricao": "Prêmio de seguro anual",
+        "pagamento": "PIX",
+        "data": "2026-07-08T15:01:00Z",
+        "valor": 750.00
+    }
+]

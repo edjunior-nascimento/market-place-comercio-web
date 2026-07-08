@@ -140,8 +140,6 @@ app.post('/api/produtos', (req, res) => {
   });
 });
 
-
-//habilitar ou oculto o produto
 app.patch('/api/produtos/:id/oculto', (req, res) => {
   const filePath = path.join(__dirname, 'json/produtos.json');
   const { id } = req.params;
@@ -199,7 +197,6 @@ app.patch('/api/produtos/:id/oculto', (req, res) => {
     }
   });
 });
-
 
 app.put('/api/produtos/:id', (req, res) => {
   const filePath = path.join(__dirname, 'json/produtos.json');
@@ -310,6 +307,52 @@ app.delete('/api/produtos/:id', (req, res) => {
         code: 500,
         status: "error",
         message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+//CAIXA
+app.get('/api/caixa/:date', (req, res) => {      
+  const filePath = path.join(__dirname, 'json/caixa.json');
+  const { date } = req.params;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados do caixa",
+        data: null
+      });
+    }
+
+    try {
+      const caixa = JSON.parse(data);
+      const registro = caixa.filter(c => c.data.split('T')[0] === date);
+
+      if (!registro) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Registro não encontrado",
+          data: null
+        });
+      }
+
+      return res.status(200).json({
+        code: 200,
+        status: "success",
+        message: "Registro retornado com sucesso",
+        data: registro
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar caixa",
         data: null
       });
     }

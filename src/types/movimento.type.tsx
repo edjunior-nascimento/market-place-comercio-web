@@ -1,9 +1,12 @@
+import { PagamentoEnum } from "../enum/pagamento.enum";
+import { TipoEnum } from "../enum/tipo.enum";
 
-export interface MoviementoType {
+export interface MovimentoType {
     id: string,
-    tipo: "entrada" | "saida",
-    nome: string,
+    tipo: TipoEnum,
+    categoria: string,
     descricao: string,
+    pagamento: PagamentoEnum,
     data: string,
     valor: number
 }
