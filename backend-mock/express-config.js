@@ -9,6 +9,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json()); // para aceitar JSON no body
 
+//PRODUTOS
 app.get('/api/produtos', (req, res) => {      
   const filePath = path.join(__dirname, 'json/produtos.json');
 
@@ -42,6 +43,281 @@ app.get('/api/produtos', (req, res) => {
   });
 });
 
+app.get('/api/produto/:id', (req, res) => {      
+  const filePath = path.join(__dirname, 'json/produtos.json');
+  const { id } = req.params;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos produtos",
+        data: null
+      });
+    }
+
+    try {
+      const produtos = JSON.parse(data);
+      const produto = produtos.find(p => p.id === id);
+
+      if (!produto) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Produto não encontrado",
+          data: null
+        });
+      }
+
+      return res.status(200).json({
+        code: 200,
+        status: "success",
+        message: "Produto retornado com sucesso",
+        data: produto
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+app.post('/api/produtos', (req, res) => {
+  const filePath = path.join(__dirname, 'json/produtos.json');
+  const newProduto = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos produtos",
+        data: null
+      });
+    }
+
+    try {
+      const produtos = JSON.parse(data);
+      const maxNumber = produtos.reduce((max, produto) => {
+        const match = produto.id?.match(/\d+/);
+        return Math.max(max, match ? parseInt(match[0]) : 0);
+      }, 0);
+      newProduto.id = !newProduto.id || newProduto.id === "" ? `PRT${String(maxNumber + 1).padStart(3, '0')}` : newProduto.id;
+      produtos.push(newProduto);
+
+      fs.writeFile(filePath, JSON.stringify(produtos, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao salvar o novo produto",
+            data: null
+          });
+        }
+
+        return res.status(201).json({
+          code: 201,
+          status: "success",
+          message: "Produto adicionado com sucesso",
+          data: newProduto
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+
+//habilitar ou oculto o produto
+app.patch('/api/produtos/:id/oculto', (req, res) => {
+  const filePath = path.join(__dirname, 'json/produtos.json');
+  const { id } = req.params;
+  const { oculto } = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos produtos",
+        data: null
+      });
+    }
+
+    try {
+      const produtos = JSON.parse(data);
+      const index = produtos.findIndex(p => p.id === id);
+      if (index === -1) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Produto não encontrado",
+          data: null
+        });
+      }
+
+      produtos[index].oculto = oculto;
+
+      fs.writeFile(filePath, JSON.stringify(produtos, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao atualizar o produto",
+            data: null
+          });
+        }
+
+        return res.status(200).json({
+          code: 200,
+          status: "success",
+          message: "Produto atualizado com sucesso",
+          data: produtos[index]
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+
+app.put('/api/produtos/:id', (req, res) => {
+  const filePath = path.join(__dirname, 'json/produtos.json');
+  const { id } = req.params;
+  const updatedProduto = req.body;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos produtos",
+        data: null
+      });
+    }
+
+    try {
+      const produtos = JSON.parse(data);
+      const index = produtos.findIndex(p => p.id === id);
+      if (index === -1) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Produto não encontrado",
+          data: null
+        });
+      }
+
+      produtos[index] = { ...produtos[index], ...updatedProduto };
+
+      fs.writeFile(filePath, JSON.stringify(produtos, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao atualizar o produto",
+            data: null
+          });
+        }
+
+        return res.status(200).json({
+          code: 200,
+          status: "success",
+          message: "Produto atualizado com sucesso",
+          data: produtos[index]
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+app.delete('/api/produtos/:id', (req, res) => {
+  const filePath = path.join(__dirname, 'json/produtos.json');
+  const { id } = req.params;
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao carregar os dados dos produtos",
+        data: null
+      });
+    }
+
+    try {
+      const produtos = JSON.parse(data);
+      const index = produtos.findIndex(p => p.id === id);
+      if (index === -1) {
+        return res.status(404).json({
+          code: 404,
+          status: "error",
+          message: "Produto não encontrado",
+          data: null
+        });
+      }
+
+      produtos.splice(index, 1);
+
+      fs.writeFile(filePath, JSON.stringify(produtos, null, 2), 'utf8', (err) => {
+        if (err) {
+          return res.status(500).json({
+            code: 500,
+            status: "error",
+            message: "Erro ao excluir o produto",
+            data: null
+          });
+        }
+
+        return res.status(200).json({
+          code: 200,
+          status: "success",
+          message: "Produto excluído com sucesso",
+          data: null
+        });
+      });
+
+    } catch (parseError) {
+      return res.status(500).json({
+        code: 500,
+        status: "error",
+        message: "Erro ao interpretar produtos",
+        data: null
+      });
+    }
+  });
+});
+
+
+//COMPRAS
 app.get('/api/compras', (req, res) => {      
   const filePath = path.join(__dirname, 'json/compras.json');
 
@@ -164,51 +440,7 @@ app.get('/api/compras/:date', (req, res) => {
   });
 });
 
-app.get('/api/produto/:id', (req, res) => {      
-  const filePath = path.join(__dirname, 'json/produtos.json');
-  const { id } = req.params;
-
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      return res.status(500).json({
-        code: 500,
-        status: "error",
-        message: "Erro ao carregar os dados dos produtos",
-        data: null
-      });
-    }
-
-    try {
-      const produtos = JSON.parse(data);
-      const produto = produtos.find(p => p.id === id);
-
-      if (!produto) {
-        return res.status(404).json({
-          code: 404,
-          status: "error",
-          message: "Produto não encontrado",
-          data: null
-        });
-      }
-
-      return res.status(200).json({
-        code: 200,
-        status: "success",
-        message: "Produto retornado com sucesso",
-        data: produto
-      });
-
-    } catch (parseError) {
-      return res.status(500).json({
-        code: 500,
-        status: "error",
-        message: "Erro ao interpretar produtos",
-        data: null
-      });
-    }
-  });
-});
-
+//CUPONS
 app.get('/api/cupons/:codigo', (req, res) => {      
   const filePath = path.join(__dirname, 'json/cupons.json');
   const { codigo } = req.params;

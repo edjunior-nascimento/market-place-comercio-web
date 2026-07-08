@@ -8,7 +8,9 @@ import ProdutoService from "../../service/produto.service";
 import { ProdutoType } from "../../types/produto.type";
 import { useNavigate } from "react-router-dom";
 import { CardProduto } from "../../components/layouts/CardProduto";
-import { Add, Edit } from "@mui/icons-material";
+import { Add, DeleteOutlined, Edit, VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material";
+import { DialogConfirmation } from "../../components/feature/DialogConfirmation";
+import { ModelMenu } from "../../components/feature/ModelMenu";
 
 export function ProdutosPage() {
 
@@ -16,11 +18,14 @@ export function ProdutosPage() {
 
   const [pesquisa, setPesquisa] = useState('');
   const [produtos, setProdutos] = useState<ProdutoType[]>([]);
-  const [produto, setProduto] = useState<ProdutoType>();
+  const [produtoSelecionado, setProdutoSelecionado] = useState<ProdutoType>();
   const [categorias, setCategorias] = useState<CategoriaType[]>([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState<string>(categorias[0]?.id || '');
   const categoriaRefs = useRef<Record<string, HTMLElement | null>>({});
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [openExcluir, setOpenExcluir] = useState(false);
+
 
   useEffect(() => {
     setLoading(true);
@@ -70,6 +75,37 @@ export function ProdutosPage() {
       block: "start",
     });
   };
+
+  const handleOcultar = () => {
+    if (produtoSelecionado) {
+      ProdutoService.disponibilidade(produtoSelecionado.id, !produtoSelecionado.oculto)
+        .then(() => {
+          setProdutos(prevProdutos => prevProdutos.map(produto => {
+            if (produto.id === produtoSelecionado.id) {
+              return { ...produto, oculto: !produto.oculto };
+            }
+            return produto;
+          }));
+        })
+        .catch((error) => {
+          console.error('Erro ao ocultar produto', error);
+        });
+    }
+  }
+
+  const handleExcluir = () => {
+    setOpenExcluir(false);
+    if (produtoSelecionado) {
+      ProdutoService.deletar(produtoSelecionado.id)
+        .then(() => {
+          setProdutos(prevProdutos => prevProdutos.filter(produto => produto.id !== produtoSelecionado.id));
+        })
+        .catch((error) => {
+          console.error('Erro ao excluir produto', error);
+        });
+    }
+  }
+
 
   return (
     <Container sx={{ mt: 4, p: 1 }}>
@@ -143,7 +179,7 @@ export function ProdutosPage() {
                       filtroProdutos.filter(produto => produto.categoria === Number(categoria.id)).map((produto) => (
                         <CardProduto
                           produto={produto}
-                          onClick={() => navigate('/produto/' + produto.id)}
+                          onClick={() => { setOpen(true); setProdutoSelecionado(produto); }}
                         />
                       ))
                     }
@@ -154,6 +190,22 @@ export function ProdutosPage() {
           }
         </Box>
       </Box>
+      <DialogConfirmation
+        titulo="Excluir Produto"
+        descricao="Deseja excluir este produto?"
+        open={openExcluir}
+        onConfirmar={handleExcluir}
+        onCancelar={() => setOpenExcluir(false)}
+      />
+      <ModelMenu
+        itens={
+          [
+            { label: 'Editar', descricao: 'Editar produto', icone: <Edit />, onClick: () => { if (produtoSelecionado) { navigate(`/produto/${produtoSelecionado.id}`); setOpen(false) } } },
+            { label: (produtoSelecionado?.oculto ? 'Mostrar' : 'Ocultar'), descricao: (produtoSelecionado?.oculto ? 'Exibir o produto' : 'Oculta a exibição do produto'), icone: (produtoSelecionado?.oculto ? <VisibilityOutlined /> : <VisibilityOffOutlined />), onClick: () => { if (produtoSelecionado) { handleOcultar(); setOpen(false) } } },
+            { label: 'Excluir', descricao: 'Excluir produto definivamente', icone: <DeleteOutlined />, onClick: () => { if (produtoSelecionado) { setOpenExcluir(true); setOpen(false) } } },
+
+          ]} produto={produtoSelecionado} open={open} onClose={() => setOpen(false)} />
     </Container>
   );
+
 }

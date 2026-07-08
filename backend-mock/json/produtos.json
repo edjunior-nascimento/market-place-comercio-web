@@ -7,11 +7,20 @@
     ],
     "nome": "Feijoada Completa",
     "descricao": "Tradicional feijoada brasileira com acompanhamentos.",
-    "preco": 49.90,
+    "preco": 49.9,
     "quantidade": 100,
     "unidade": "un",
-    "componentes": ["Feijão preto", "Carne seca", "Linguiça", "Arroz", "Farofa", "Couve", "Laranja"],
-    "categoria": 0
+    "componentes": [
+      "Feijão preto",
+      "Carne seca",
+      "Linguiça",
+      "Arroz",
+      "Farofa",
+      "Couve",
+      "Laranja"
+    ],
+    "categoria": 0,
+    "oculto": true
   },
   {
     "id": "PRT002",
@@ -20,11 +29,18 @@
     ],
     "nome": "Strogonoff de Frango",
     "descricao": "Strogonoff de frango cremoso servido com arroz e batata palha.",
-    "preco": 39.90,
+    "preco": 39.9,
     "quantidade": 80,
     "unidade": "un",
-    "componentes": ["Frango", "Creme de leite", "Champignon", "Arroz", "Batata palha"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Creme de leite",
+      "Champignon",
+      "Arroz",
+      "Batata palha"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT003",
@@ -33,11 +49,18 @@
     ],
     "nome": "Lasanha à Bolonhesa",
     "descricao": "Lasanha de massa fresca com molho bolonhesa e queijo gratinado.",
-    "preco": 44.90,
+    "preco": 44.9,
     "quantidade": 60,
     "unidade": "un",
-    "componentes": ["Massa", "Molho bolonhesa", "Queijo", "Presunto", "Molho branco"],
-    "categoria": 2
+    "componentes": [
+      "Massa",
+      "Molho bolonhesa",
+      "Queijo",
+      "Presunto",
+      "Molho branco"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT004",
@@ -46,11 +69,18 @@
     ],
     "nome": "Salada Caesar",
     "descricao": "Salada Caesar com frango grelhado, croutons e molho especial.",
-    "preco": 29.90,
+    "preco": 29.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Alface", "Frango grelhado", "Croutons", "Molho Caesar", "Parmesão"],
-    "categoria": 3
+    "componentes": [
+      "Alface",
+      "Frango grelhado",
+      "Croutons",
+      "Molho Caesar",
+      "Parmesão"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT005",
@@ -59,11 +89,17 @@
     ],
     "nome": "Pizza Margherita",
     "descricao": "Pizza clássica com molho de tomate, mussarela e manjericão.",
-    "preco": 59.90,
+    "preco": 59.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Mussarela", "Manjericão"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Mussarela",
+      "Manjericão"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT006",
@@ -72,11 +108,18 @@
     ],
     "nome": "Combo Sushi",
     "descricao": "Combo de sushis variados com 20 peças.",
-    "preco": 69.90,
+    "preco": 69.9,
     "quantidade": 30,
     "unidade": "un",
-    "componentes": ["Arroz", "Salmão", "Alga", "Cream cheese", "Pepino"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Salmão",
+      "Alga",
+      "Cream cheese",
+      "Pepino"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT007",
@@ -85,11 +128,19 @@
     ],
     "nome": "Moqueca de Peixe",
     "descricao": "Moqueca baiana de peixe com leite de coco e azeite de dendê.",
-    "preco": 55.90,
+    "preco": 55.9,
     "quantidade": 70,
     "unidade": "un",
-    "componentes": ["Peixe", "Leite de coco", "Azeite de dendê", "Cebola", "Tomate", "Coentro"],
-    "categoria": 0
+    "componentes": [
+      "Peixe",
+      "Leite de coco",
+      "Azeite de dendê",
+      "Cebola",
+      "Tomate",
+      "Coentro"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT008",
@@ -98,11 +149,18 @@
     ],
     "nome": "Fricassê de Frango",
     "descricao": "Fricassê de frango com batata, milho e ervilhas.",
-    "preco": 42.90,
+    "preco": 42.9,
     "quantidade": 65,
     "unidade": "un",
-    "componentes": ["Frango", "Batata", "Milho", "Ervilhas", "Creme de leite"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Batata",
+      "Milho",
+      "Ervilhas",
+      "Creme de leite"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT009",
@@ -111,11 +169,17 @@
     ],
     "nome": "Macarrão ao Molho Pesto",
     "descricao": "Macarrão fresco ao molho pesto com parmesão.",
-    "preco": 38.90,
+    "preco": 38.9,
     "quantidade": 55,
     "unidade": "un",
-    "componentes": ["Macarrão", "Molho pesto", "Parmesão", "Pinhão"],
-    "categoria": 2
+    "componentes": [
+      "Macarrão",
+      "Molho pesto",
+      "Parmesão",
+      "Pinhão"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT010",
@@ -124,11 +188,18 @@
     ],
     "nome": "Salada Grega",
     "descricao": "Salada grega com azeitonas, queijo feta e azeite.",
-    "preco": 32.90,
+    "preco": 32.9,
     "quantidade": 45,
     "unidade": "un",
-    "componentes": ["Tomate", "Pepino", "Cebola", "Azeitonas", "Queijo feta"],
-    "categoria": 3
+    "componentes": [
+      "Tomate",
+      "Pepino",
+      "Cebola",
+      "Azeitonas",
+      "Queijo feta"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT011",
@@ -137,11 +208,18 @@
     ],
     "nome": "Pizza Calabresa",
     "descricao": "Pizza com calabresa, cebola e mussarela.",
-    "preco": 62.90,
+    "preco": 62.9,
     "quantidade": 35,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Calabresa", "Cebola", "Mussarela"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Calabresa",
+      "Cebola",
+      "Mussarela"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT012",
@@ -150,11 +228,16 @@
     ],
     "nome": "Sashimi de Salmão",
     "descricao": "Sashimi fresco de salmão com wasabi e shoyu.",
-    "preco": 75.90,
+    "preco": 75.9,
     "quantidade": 25,
     "unidade": "un",
-    "componentes": ["Salmão", "Wasabi", "Shoyu"],
-    "categoria": 5
+    "componentes": [
+      "Salmão",
+      "Wasabi",
+      "Shoyu"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT013",
@@ -163,11 +246,17 @@
     ],
     "nome": "Acarajé",
     "descricao": "Acarajé baiano com vatapá e caruru.",
-    "preco": 18.90,
+    "preco": 18.9,
     "quantidade": 90,
     "unidade": "un",
-    "componentes": ["Feijão fradinho", "Cebola", "Vatapá", "Caruru"],
-    "categoria": 0
+    "componentes": [
+      "Feijão fradinho",
+      "Cebola",
+      "Vatapá",
+      "Caruru"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT014",
@@ -176,11 +265,16 @@
     ],
     "nome": "Coxinha de Frango",
     "descricao": "Coxinha de frango com recheio cremoso.",
-    "preco": 8.90,
+    "preco": 8.9,
     "quantidade": 120,
     "unidade": "un",
-    "componentes": ["Frango", "Massa", "Creme de leite"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Massa",
+      "Creme de leite"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT015",
@@ -189,11 +283,17 @@
     ],
     "nome": "Ravioli de Ricota",
     "descricao": "Ravioli recheado com ricota e espinafre.",
-    "preco": 46.90,
+    "preco": 46.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Massa", "Ricota", "Espinafre", "Molho de tomate"],
-    "categoria": 2
+    "componentes": [
+      "Massa",
+      "Ricota",
+      "Espinafre",
+      "Molho de tomate"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT016",
@@ -202,11 +302,17 @@
     ],
     "nome": "Salada Caprese",
     "descricao": "Salada italiana com tomate, mussarela e manjericão.",
-    "preco": 34.90,
+    "preco": 34.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Tomate", "Mussarela", "Manjericão", "Azeite"],
-    "categoria": 3
+    "componentes": [
+      "Tomate",
+      "Mussarela",
+      "Manjericão",
+      "Azeite"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT017",
@@ -215,11 +321,19 @@
     ],
     "nome": "Pizza Portuguesa",
     "descricao": "Pizza com presunto, ovo, cebola e azeitonas.",
-    "preco": 64.90,
+    "preco": 64.9,
     "quantidade": 30,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Presunto", "Ovo", "Cebola", "Azeitonas"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Presunto",
+      "Ovo",
+      "Cebola",
+      "Azeitonas"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT018",
@@ -228,11 +342,17 @@
     ],
     "nome": "Temaki de Atum",
     "descricao": "Temaki recheado com atum fresco.",
-    "preco": 72.90,
+    "preco": 72.9,
     "quantidade": 20,
     "unidade": "un",
-    "componentes": ["Arroz", "Alga", "Atum", "Pepino"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Alga",
+      "Atum",
+      "Pepino"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT019",
@@ -241,11 +361,17 @@
     ],
     "nome": "Picanha na Chapa",
     "descricao": "Picanha grelhada com acompanhamentos.",
-    "preco": 89.90,
+    "preco": 89.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Picanha", "Arroz", "Feijão", "Farofa"],
-    "categoria": 0
+    "componentes": [
+      "Picanha",
+      "Arroz",
+      "Feijão",
+      "Farofa"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT020",
@@ -254,11 +380,17 @@
     ],
     "nome": "Frango à Parmegiana",
     "descricao": "Frango empanado com molho de tomate e queijo.",
-    "preco": 48.90,
+    "preco": 48.9,
     "quantidade": 60,
     "unidade": "un",
-    "componentes": ["Frango", "Molho de tomate", "Queijo", "Macarrão"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Molho de tomate",
+      "Queijo",
+      "Macarrão"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT021",
@@ -267,11 +399,17 @@
     ],
     "nome": "Penne ao Molho Branco",
     "descricao": "Penne com molho branco e cogumelos.",
-    "preco": 41.90,
+    "preco": 41.9,
     "quantidade": 55,
     "unidade": "un",
-    "componentes": ["Penne", "Molho branco", "Cogumelos", "Parmesão"],
-    "categoria": 2
+    "componentes": [
+      "Penne",
+      "Molho branco",
+      "Cogumelos",
+      "Parmesão"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT022",
@@ -280,11 +418,18 @@
     ],
     "nome": "Salada Colorida",
     "descricao": "Salada mista com vegetais frescos.",
-    "preco": 28.90,
+    "preco": 28.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Alface", "Tomate", "Cenoura", "Beterraba", "Milho"],
-    "categoria": 3
+    "componentes": [
+      "Alface",
+      "Tomate",
+      "Cenoura",
+      "Beterraba",
+      "Milho"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT023",
@@ -293,11 +438,16 @@
     ],
     "nome": "Pizza Mussarela",
     "descricao": "Pizza simples com mussarela derretida.",
-    "preco": 57.90,
+    "preco": 57.9,
     "quantidade": 45,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Mussarela"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Mussarela"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT024",
@@ -306,11 +456,18 @@
     ],
     "nome": "Uramaki Califórnia",
     "descricao": "Uramaki com cream cheese e pepino.",
-    "preco": 68.90,
+    "preco": 68.9,
     "quantidade": 35,
     "unidade": "un",
-    "componentes": ["Arroz", "Alga", "Cream cheese", "Pepino", "Salmão"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Alga",
+      "Cream cheese",
+      "Pepino",
+      "Salmão"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT025",
@@ -319,11 +476,18 @@
     ],
     "nome": "Virado à Paulista",
     "descricao": "Virado com feijão, couve e ovo.",
-    "preco": 35.90,
+    "preco": 35.9,
     "quantidade": 75,
     "unidade": "un",
-    "componentes": ["Feijão", "Arroz", "Couve", "Ovo", "Bacon"],
-    "categoria": 0
+    "componentes": [
+      "Feijão",
+      "Arroz",
+      "Couve",
+      "Ovo",
+      "Bacon"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT026",
@@ -332,11 +496,16 @@
     ],
     "nome": "Carne Assada",
     "descricao": "Carne assada com batatas.",
-    "preco": 52.90,
+    "preco": 52.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Carne", "Batatas", "Cenouras"],
-    "categoria": 1
+    "componentes": [
+      "Carne",
+      "Batatas",
+      "Cenouras"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT027",
@@ -345,11 +514,17 @@
     ],
     "nome": "Spaghetti Carbonara",
     "descricao": "Spaghetti com molho carbonara.",
-    "preco": 43.90,
+    "preco": 43.9,
     "quantidade": 60,
     "unidade": "un",
-    "componentes": ["Spaghetti", "Bacon", "Ovo", "Queijo"],
-    "categoria": 2
+    "componentes": [
+      "Spaghetti",
+      "Bacon",
+      "Ovo",
+      "Queijo"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT028",
@@ -358,11 +533,17 @@
     ],
     "nome": "Salada de Tomate",
     "descricao": "Salada fresca de tomates variados.",
-    "preco": 26.90,
+    "preco": 26.9,
     "quantidade": 55,
     "unidade": "un",
-    "componentes": ["Tomate", "Cebola", "Azeite", "Vinagre"],
-    "categoria": 3
+    "componentes": [
+      "Tomate",
+      "Cebola",
+      "Azeite",
+      "Vinagre"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT029",
@@ -371,11 +552,17 @@
     ],
     "nome": "Pizza Bacon",
     "descricao": "Pizza com bacon crocante e mussarela.",
-    "preco": 61.90,
+    "preco": 61.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Bacon", "Mussarela"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Bacon",
+      "Mussarela"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT030",
@@ -384,11 +571,15 @@
     ],
     "nome": "Nigiri de Salmão",
     "descricao": "Nigiri com fatia de salmão fresco.",
-    "preco": 70.90,
+    "preco": 70.9,
     "quantidade": 30,
     "unidade": "un",
-    "componentes": ["Arroz", "Salmão"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Salmão"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT031",
@@ -397,11 +588,16 @@
     ],
     "nome": "Baião de Dois",
     "descricao": "Baião de dois com queijo coalho.",
-    "preco": 37.90,
+    "preco": 37.9,
     "quantidade": 65,
     "unidade": "un",
-    "componentes": ["Arroz", "Feijão verde", "Queijo coalho"],
-    "categoria": 0
+    "componentes": [
+      "Arroz",
+      "Feijão verde",
+      "Queijo coalho"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT032",
@@ -410,11 +606,16 @@
     ],
     "nome": "Peito de Frango Grelhado",
     "descricao": "Peito de frango grelhado com salada.",
-    "preco": 36.90,
+    "preco": 36.9,
     "quantidade": 70,
     "unidade": "un",
-    "componentes": ["Frango", "Salada", "Limão"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Salada",
+      "Limão"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT033",
@@ -423,11 +624,16 @@
     ],
     "nome": "Fettuccine Alfredo",
     "descricao": "Fettuccine com molho alfredo cremoso.",
-    "preco": 45.90,
+    "preco": 45.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Fettuccine", "Molho alfredo", "Parmesão"],
-    "categoria": 2
+    "componentes": [
+      "Fettuccine",
+      "Molho alfredo",
+      "Parmesão"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT034",
@@ -436,11 +642,16 @@
     ],
     "nome": "Salada de Palmito",
     "descricao": "Salada com palmito e maionese.",
-    "preco": 31.90,
+    "preco": 31.9,
     "quantidade": 45,
     "unidade": "un",
-    "componentes": ["Palmito", "Maionese", "Cebola"],
-    "categoria": 3
+    "componentes": [
+      "Palmito",
+      "Maionese",
+      "Cebola"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT035",
@@ -449,11 +660,19 @@
     ],
     "nome": "Pizza Quatro Queijos",
     "descricao": "Pizza com quatro tipos de queijo.",
-    "preco": 66.90,
+    "preco": 66.9,
     "quantidade": 35,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Mussarela", "Gorgonzola", "Parmesão", "Provolone"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Mussarela",
+      "Gorgonzola",
+      "Parmesão",
+      "Provolone"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT036",
@@ -462,11 +681,18 @@
     ],
     "nome": "Sushi Roll Especial",
     "descricao": "Roll de sushi com recheios variados.",
-    "preco": 74.90,
+    "preco": 74.9,
     "quantidade": 25,
     "unidade": "un",
-    "componentes": ["Arroz", "Alga", "Salmão", "Cream cheese", "Abacate"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Alga",
+      "Salmão",
+      "Cream cheese",
+      "Abacate"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT037",
@@ -475,11 +701,15 @@
     ],
     "nome": "Tapioca com Queijo",
     "descricao": "Tapioca recheada com queijo coalho.",
-    "preco": 12.90,
+    "preco": 12.9,
     "quantidade": 100,
     "unidade": "un",
-    "componentes": ["Tapioca", "Queijo coalho"],
-    "categoria": 0
+    "componentes": [
+      "Tapioca",
+      "Queijo coalho"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT038",
@@ -488,11 +718,15 @@
     ],
     "nome": "Sobrecoxa Assada",
     "descricao": "Sobrecoxa de frango assada com temperos.",
-    "preco": 29.90,
+    "preco": 29.9,
     "quantidade": 80,
     "unidade": "un",
-    "componentes": ["Frango", "Temperos"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Temperos"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT039",
@@ -501,11 +735,16 @@
     ],
     "nome": "Tagliatelle ao Funghi",
     "descricao": "Tagliatelle com cogumelos e molho.",
-    "preco": 47.90,
+    "preco": 47.9,
     "quantidade": 45,
     "unidade": "un",
-    "componentes": ["Tagliatelle", "Cogumelos", "Molho"],
-    "categoria": 2
+    "componentes": [
+      "Tagliatelle",
+      "Cogumelos",
+      "Molho"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT040",
@@ -514,11 +753,16 @@
     ],
     "nome": "Salada de Batata",
     "descricao": "Salada de batatas cozidas com maionese.",
-    "preco": 24.90,
+    "preco": 24.9,
     "quantidade": 60,
     "unidade": "un",
-    "componentes": ["Batata", "Maionese", "Cebola"],
-    "categoria": 3
+    "componentes": [
+      "Batata",
+      "Maionese",
+      "Cebola"
+    ],
+    "categoria": 3,
+    "oculto": true
   },
   {
     "id": "PRT041",
@@ -527,11 +771,19 @@
     ],
     "nome": "Pizza Vegetariana",
     "descricao": "Pizza com vegetais frescos.",
-    "preco": 58.90,
+    "preco": 58.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Tomate", "Pimentão", "Cebola", "Azeitonas"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Tomate",
+      "Pimentão",
+      "Cebola",
+      "Azeitonas"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT042",
@@ -540,11 +792,16 @@
     ],
     "nome": "Sashimi de Atum",
     "descricao": "Sashimi de atum fresco.",
-    "preco": 78.90,
+    "preco": 78.9,
     "quantidade": 20,
     "unidade": "un",
-    "componentes": ["Atum", "Wasabi", "Shoyu"],
-    "categoria": 5
+    "componentes": [
+      "Atum",
+      "Wasabi",
+      "Shoyu"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT043",
@@ -553,11 +810,16 @@
     ],
     "nome": "Cuscuz Nordestino",
     "descricao": "Cuscuz com manteiga e leite.",
-    "preco": 15.90,
+    "preco": 15.9,
     "quantidade": 90,
     "unidade": "un",
-    "componentes": ["Cuscuz", "Manteiga", "Leite"],
-    "categoria": 0
+    "componentes": [
+      "Cuscuz",
+      "Manteiga",
+      "Leite"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT044",
@@ -566,11 +828,16 @@
     ],
     "nome": "Frango Xadrez",
     "descricao": "Frango xadrez com legumes.",
-    "preco": 40.90,
+    "preco": 40.9,
     "quantidade": 55,
     "unidade": "un",
-    "componentes": ["Frango", "Legumes", "Molho"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Legumes",
+      "Molho"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT045",
@@ -579,11 +846,17 @@
     ],
     "nome": "Lasanha Vegetariana",
     "descricao": "Lasanha com berinjela e ricota.",
-    "preco": 46.90,
+    "preco": 46.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Massa", "Berinjela", "Ricota", "Molho"],
-    "categoria": 2
+    "componentes": [
+      "Massa",
+      "Berinjela",
+      "Ricota",
+      "Molho"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT046",
@@ -592,11 +865,16 @@
     ],
     "nome": "Salada de Couve",
     "descricao": "Salada de couve crua com limão.",
-    "preco": 22.90,
+    "preco": 22.9,
     "quantidade": 65,
     "unidade": "un",
-    "componentes": ["Couve", "Limão", "Azeite"],
-    "categoria": 3
+    "componentes": [
+      "Couve",
+      "Limão",
+      "Azeite"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT047",
@@ -605,11 +883,17 @@
     ],
     "nome": "Pizza Pepperoni",
     "descricao": "Pizza com pepperoni picante.",
-    "preco": 63.90,
+    "preco": 63.9,
     "quantidade": 35,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Pepperoni", "Mussarela"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Pepperoni",
+      "Mussarela"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT048",
@@ -618,11 +902,16 @@
     ],
     "nome": "Maki de Pepino",
     "descricao": "Maki simples com pepino.",
-    "preco": 65.90,
+    "preco": 65.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Arroz", "Alga", "Pepino"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Alga",
+      "Pepino"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT049",
@@ -631,11 +920,16 @@
     ],
     "nome": "Arroz Carreteiro",
     "descricao": "Arroz com carne seca e bacon.",
-    "preco": 38.90,
+    "preco": 38.9,
     "quantidade": 70,
     "unidade": "un",
-    "componentes": ["Arroz", "Carne seca", "Bacon"],
-    "categoria": 0
+    "componentes": [
+      "Arroz",
+      "Carne seca",
+      "Bacon"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT050",
@@ -644,11 +938,16 @@
     ],
     "nome": "Coxinhas de Frango (6 un)",
     "descricao": "Seis coxinhas de frango crocantes.",
-    "preco": 25.90,
+    "preco": 25.9,
     "quantidade": 80,
     "unidade": "un",
-    "componentes": ["Frango", "Massa", "Óleo"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Massa",
+      "Óleo"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT051",
@@ -657,11 +956,17 @@
     ],
     "nome": "Cannelloni de Espinafre",
     "descricao": "Cannelloni recheado com espinafre.",
-    "preco": 49.90,
+    "preco": 49.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Massa", "Espinafre", "Ricota", "Molho"],
-    "categoria": 2
+    "componentes": [
+      "Massa",
+      "Espinafre",
+      "Ricota",
+      "Molho"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT052",
@@ -670,11 +975,16 @@
     ],
     "nome": "Salada de Beterraba",
     "descricao": "Beterraba cozida com cebola.",
-    "preco": 27.90,
+    "preco": 27.9,
     "quantidade": 55,
     "unidade": "un",
-    "componentes": ["Beterraba", "Cebola", "Azeite"],
-    "categoria": 3
+    "componentes": [
+      "Beterraba",
+      "Cebola",
+      "Azeite"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT053",
@@ -683,11 +993,17 @@
     ],
     "nome": "Pizza de Brócolis",
     "descricao": "Pizza com brócolis e mussarela.",
-    "preco": 59.90,
+    "preco": 59.9,
     "quantidade": 45,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Brócolis", "Mussarela"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Brócolis",
+      "Mussarela"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT054",
@@ -696,11 +1012,18 @@
     ],
     "nome": "Temaki Califórnia",
     "descricao": "Temaki com recheio californiano.",
-    "preco": 73.90,
+    "preco": 73.9,
     "quantidade": 30,
     "unidade": "un",
-    "componentes": ["Arroz", "Alga", "Cream cheese", "Abacate", "Pepino"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Alga",
+      "Cream cheese",
+      "Abacate",
+      "Pepino"
+    ],
+    "categoria": 5,
+    "oculto": false
   },
   {
     "id": "PRT055",
@@ -709,11 +1032,16 @@
     ],
     "nome": "Feijoada Verde",
     "descricao": "Feijoada com feijão verde.",
-    "preco": 51.90,
+    "preco": 51.9,
     "quantidade": 60,
     "unidade": "un",
-    "componentes": ["Feijão verde", "Carne", "Arroz"],
-    "categoria": 0
+    "componentes": [
+      "Feijão verde",
+      "Carne",
+      "Arroz"
+    ],
+    "categoria": 0,
+    "oculto": false
   },
   {
     "id": "PRT056",
@@ -722,11 +1050,16 @@
     ],
     "nome": "Frango à Passarinho",
     "descricao": "Frango frito com alho e óleo.",
-    "preco": 33.90,
+    "preco": 33.9,
     "quantidade": 75,
     "unidade": "un",
-    "componentes": ["Frango", "Alho", "Óleo"],
-    "categoria": 1
+    "componentes": [
+      "Frango",
+      "Alho",
+      "Óleo"
+    ],
+    "categoria": 1,
+    "oculto": false
   },
   {
     "id": "PRT057",
@@ -735,11 +1068,16 @@
     ],
     "nome": "Gnocchi ao Sugo",
     "descricao": "Gnocchi com molho de tomate.",
-    "preco": 42.90,
+    "preco": 42.9,
     "quantidade": 50,
     "unidade": "un",
-    "componentes": ["Gnocchi", "Molho de tomate", "Queijo"],
-    "categoria": 2
+    "componentes": [
+      "Gnocchi",
+      "Molho de tomate",
+      "Queijo"
+    ],
+    "categoria": 2,
+    "oculto": false
   },
   {
     "id": "PRT058",
@@ -748,11 +1086,16 @@
     ],
     "nome": "Salada de Milho",
     "descricao": "Milho cozido com maionese.",
-    "preco": 23.90,
+    "preco": 23.9,
     "quantidade": 70,
     "unidade": "un",
-    "componentes": ["Milho", "Maionese", "Cebola"],
-    "categoria": 3
+    "componentes": [
+      "Milho",
+      "Maionese",
+      "Cebola"
+    ],
+    "categoria": 3,
+    "oculto": false
   },
   {
     "id": "PRT059",
@@ -761,11 +1104,17 @@
     ],
     "nome": "Pizza de Carne",
     "descricao": "Pizza com carne moída e cebola.",
-    "preco": 60.90,
+    "preco": 60.9,
     "quantidade": 40,
     "unidade": "un",
-    "componentes": ["Massa", "Molho de tomate", "Carne moída", "Cebola"],
-    "categoria": 4
+    "componentes": [
+      "Massa",
+      "Molho de tomate",
+      "Carne moída",
+      "Cebola"
+    ],
+    "categoria": 4,
+    "oculto": false
   },
   {
     "id": "PRT060",
@@ -774,10 +1123,55 @@
     ],
     "nome": "Platter de Sushi",
     "descricao": "Platter com 30 peças de sushi variado.",
-    "preco": 89.90,
+    "preco": 89.9,
     "quantidade": 15,
     "unidade": "un",
-    "componentes": ["Arroz", "Peixe", "Alga", "Vegetais"],
-    "categoria": 5
+    "componentes": [
+      "Arroz",
+      "Peixe",
+      "Alga",
+      "Vegetais"
+    ],
+    "categoria": 5,
+    "oculto": false
+  },
+  {
+    "nome": "teste2",
+    "descricao": "teste3",
+    "categoria": 0,
+    "preco": 12,
+    "quantidade": 1,
+    "unidade": "un",
+    "id": "PRT062",
+    "componentes": [
+      "TEste",
+      "Valores"
+    ],
+    "oculto": false
+  },
+  {
+    "nome": "Protudo teste",
+    "descricao": "teste",
+    "categoria": 0,
+    "preco": 1,
+    "quantidade": 1,
+    "unidade": "un",
+    "id": "PRT064",
+    "componentes": [
+      "teste"
+    ],
+    "oculto": true
+  },
+  {
+    "nome": "teste",
+    "descricao": "teste",
+    "categoria": 0,
+    "preco": 1,
+    "quantidade": 1,
+    "unidade": "un",
+    "id": "PRT065",
+    "componentes": [
+      "teste"
+    ]
   }
 ]

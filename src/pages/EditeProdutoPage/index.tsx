@@ -4,32 +4,39 @@ import {
     Button,
     CardMedia,
     Container,
+    FormControlLabel,
     Grid,
     IconButton,
     MenuItem,
+    Switch,
     TextField,
     Typography,
 } from "@mui/material";
 import {
     Add,
     AddPhotoAlternateOutlined,
+    BedOutlined,
     Close,
     DeleteOutlined,
 } from "@mui/icons-material";
 import { Header } from "../../components/layouts/Header";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProdutoService from "../../service/produto.service";
 import { ProdutoType } from "../../types/produto.type";
 import { MedidasEnum } from "../../enum/medidas.enum";
+import CategoriaService from "../../service/categoria.service";
+import { CategoriaType } from "../../types/categoria.type";
 
 export function EditeProdutoPage() {
+    const navigate = useNavigate();
 
     const { produtoId } = useParams();
     const [fotos, setFotos] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
     const [produto, setProduto] = useState<ProdutoType | null>(null);
     const [opcoes, setOpcoes] = useState<string[]>([]);
-
+    const [categorias, setCategorias] = useState<CategoriaType[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const [novaOpcao, setNovaOpcao] = useState("");
 
     const adicionarFoto = (
@@ -64,17 +71,58 @@ export function EditeProdutoPage() {
         );
     };
 
+    const salvarProduto = () => {
+        if (!produto) return;
+        if (produtoId) {
+            ProdutoService.editar({ ...produto, id: produtoId, componentes: opcoes })
+                .then((produtoAtualizado) => {
+                    setProduto(produtoAtualizado);
+                    setOpcoes(produtoAtualizado.componentes || []);
+                    setError(null);
+                    navigate("/produtos");
+                })
+                .catch((error) => {
+                    setError(error.response?.data?.message || "Erro ao atualizar produto");
+                });
+        } else {
+            ProdutoService.adicionar({ ...produto, id: "", componentes: opcoes })
+                .then((novoProduto) => {
+                    setProduto(novoProduto);
+                    setOpcoes(novoProduto.componentes || []);
+                    setError(null);
+                    navigate("/produtos");
+                })
+                .catch((error) => {
+                    setError(error.response?.data?.message || "Erro ao adicionar produto");
+                });
+        }
+    };
+
+
+    async function listarCategorias() {
+        CategoriaService.listar()
+            .then(response => {
+                setCategorias(response);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar categorias', error);
+                setError("Erro ao buscar categorias");
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
     useEffect(() => {
         setLoading(true);
         if (produtoId) {
             ProdutoService.getById(produtoId)
                 .then(response => {
-                    console.log('Produto encontrado:', response);
                     setProduto(response);
                     setOpcoes(response.componentes || []);
                 })
                 .catch(error => {
-                    console.error('Erro ao buscar compra', error);
+                    setError(error.response?.data?.message || "Erro ao buscar produto");
                 })
                 .finally(() => {
                     setLoading(false);
@@ -83,6 +131,11 @@ export function EditeProdutoPage() {
             setProduto(null);
             setLoading(false);
         }
+
+        async function loadData() {
+            await listarCategorias();
+        }
+        loadData();
     }, [])
 
     return (
@@ -209,19 +262,19 @@ export function EditeProdutoPage() {
                                         height: "50px",
                                     }
                                 }}
+                                value={produto?.categoria ?? ""}
+                                onChange={(e) =>
+                                    setProduto((prev) => ({
+                                        ...prev,
+                                        categoria: parseInt(e.target.value),
+                                    } as ProdutoType))
+                                }
                             >
-
-                                <MenuItem value="1">
-                                    Marmitas
-                                </MenuItem>
-
-                                <MenuItem value="2">
-                                    Bebidas
-                                </MenuItem>
-
-                                <MenuItem value="3">
-                                    Sobremesas
-                                </MenuItem>
+                                {categorias.map((categoria) => (
+                                    <MenuItem key={categoria.id} value={categoria.id}>
+                                        {categoria.nome}
+                                    </MenuItem>
+                                ))}
                             </TextField>
                         </Grid>
 
@@ -365,17 +418,39 @@ export function EditeProdutoPage() {
 
                     </Box>
 
+                    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2, mt: 2 }}>
+                        <Box>
+                            <Typography variant="h6" fontWeight={700}>
+                                Habilitar Produto
+                            </Typography>
+                            <Typography variant="subtitle2" color="grey.600">
+                                Habilite ou Oculte a visibilidade do produto para cliente.
+                            </Typography>
+                        </Box>
+                        <FormControlLabel
+                            control={<Switch
+                                checked={!produto?.oculto}
+                                onChange={(e) =>
+                                    setProduto((prev) => ({
+                                        ...prev,
+                                        oculto: !e.target.checked,
+                                    } as ProdutoType))
+                                } color="success" />}
+                            label=""
+                        />
+                    </Box>
+
                     <Box
                         display="flex"
                         justifyContent="flex-end"
                         gap={2}
                         mt={4}
                     >
-                        <Button variant="outlined">
+                        <Button variant="outlined" onClick={() => navigate("/produtos")}>
                             Cancelar
                         </Button>
 
-                        <Button variant="contained">
+                        <Button variant="contained" onClick={salvarProduto}>
                             Salvar Produto
                         </Button>
                     </Box>

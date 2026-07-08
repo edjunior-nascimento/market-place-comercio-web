@@ -8,5 +8,6 @@ export interface ProdutoType {
     quantidade: number,
     unidade: string,
     componentes: string[],
-    categoria: number
+    categoria: number,
+    oculto: boolean
 }
