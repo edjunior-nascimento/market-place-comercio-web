@@ -19,7 +19,7 @@ export default function SelectInput({ label, items, valor, onChange }: SelectInp
                 renderValue={(selected) => {
                     if (!selected) {
                         return (
-                            <span style={{ color: "#B50303" }}>
+                            <span style={{ fontSize: "16px" }}>
                                 {label}
                             </span>
                         );

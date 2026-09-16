@@ -27,6 +27,7 @@ import { CardCaixa } from "../../components/layouts/CardCaixa";
 import { AccountBalanceWalletOutlined, Add, ArrowDownwardOutlined, ArrowUpwardOutlined, ChevronRightOutlined, CreditCard, FormatListBulleted, LocalAtm, Pix, PlayArrow, RequestQuoteOutlined, StarHalfTwoTone, StarOutlined, Start, StartTwoTone } from "@mui/icons-material";
 import CaixaService from "../../services/caixa.service";
 import { Label } from "../../components/feature/Label";
+import UsuarioService from "../../services/usuario.service";
 
 
 export function MovimentosPage() {
@@ -39,11 +40,12 @@ export function MovimentosPage() {
     const [loading, setLoading] = useState(false);
     const [movimentacoes, setMovimentacoes] = useState<MovimentoType[] | null>(null);
 
-
     const saldoInicial = 80; // Valor inicial do caixa, você pode ajustar conforme necessário
     const valorEntradas = movimentacoes?.filter(movimento => movimento.tipo === "ENTRADA").reduce((acc, curr) => acc + curr.valor, 0) || 0;
     const valorSaidas = movimentacoes?.filter(movimento => movimento.tipo === "SAIDA").reduce((acc, curr) => acc + curr.valor, 0) || 0;
     const saldoDia = saldoInicial + valorEntradas - valorSaidas;
+
+    const usuario = [{ label: "Usuário 1", value: "usuario1" }]
 
     useEffect(() => {
         setLoading(true);
@@ -86,11 +88,7 @@ export function MovimentosPage() {
             >
 
 
-                <Box sx={{ display: "flex",  flexDirection: { md: "row", xs: "column" }, justifyContent: "space-between", flexWrap: "wrap" }}>
-
-                    <Box>
-                        <Button sx={{mb: 2}} variant="contained" color="primary"><PlayArrow /> Iniciar Caixa </Button>
-                    </Box>
+                <Box sx={{ display: "flex", flexDirection: { md: "row", xs: "column" }, gap: 5 }}>
 
                     <Box>
                         <Typography variant="h5" fontWeight={700} color="#008a00">
@@ -101,21 +99,35 @@ export function MovimentosPage() {
                             Caixa aberto para movimentações
                         </Typography>
                     </Box>
+                    <Box sx={{ display: "flex",  alignItems: "center" , gap: 5 }}>
+                        <Box>
+                            <Typography variant="h5" fontWeight={700} color="#8a0000">
+                                Fechado
+                            </Typography>
 
-                    <Box>
-                        <Typography variant="h5" fontWeight={700} color="#8a0000">
-                            Fechado
-                        </Typography>
+                            <Typography variant="body2" color="text.grey" mb={2} >
+                                Caixa se encontra fechado para movimentações
+                            </Typography>
+                        </Box>
 
-                        <Typography variant="body2" color="text.grey" mb={2} >
-                            Caixa se encontra fechado para movimentações
-                        </Typography>
+                        <Box>
+                            <Button sx={{ mb: 2 }} variant="contained" color="primary"><PlayArrow /> Iniciar Caixa </Button>
+                        </Box>
                     </Box>
-                    
+
+                </Box>
+
+                <Box sx={{ display: "flex", justifyContent: "end", flexWrap: "wrap", gap: 2, alignItems: "center" }}>
+                    <SelectInput
+                        label="Usuário"
+                        items={usuario}
+                    />
                     <InputDate
                         value={date}
                         onChange={setDate}
                     />
+
+
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "row", gap: 1, mt: 1, flexWrap: "wrap" }}>
@@ -158,7 +170,7 @@ export function MovimentosPage() {
                         ) : (
                             <Box>
                                 <InputSearch pesquisa={pesquisa} setPesquisa={setPesquisa} />
-                                <br/>
+                                <br />
 
                                 {
                                     isDesktop ? (
