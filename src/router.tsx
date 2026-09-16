@@ -1,6 +1,5 @@
-import { BrowserRouter, Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { CaixaPage } from "./pages/CaixaPage";
 import { MaisPage } from "./pages/MaisPage";
 import { PedidosPage } from "./pages/PedidosPage";
 import { ProdutosPage } from "./pages/ProdutosPage";
@@ -15,7 +14,7 @@ import { DadosUsuarioPage } from "./pages/DadosUsuarioPage";
 import { AlterarSenhaPage } from "./pages/AlterarSenhaPage";
 import { RelatoriosPage } from "./pages/RelatoriosPage";
 import { useSelector } from "react-redux";
-import { UsuarioType } from "./types/usuario";
+import { MovimentosPage } from "./pages/MovimentosPage";
 
 
 function ProtectedRoute() {
@@ -29,7 +28,6 @@ function ProtectedRoute() {
         : <Navigate to="/" replace />;
 }
 
-
 function PublicRoute() {
     const isAuthenticated = useSelector(
 
@@ -40,8 +38,6 @@ function PublicRoute() {
         ? <Navigate to="/pedidos" replace />
         : <Outlet />;
 }
-
-
 
 function RouterApp() {
 
@@ -55,7 +51,7 @@ function RouterApp() {
                 </Route>
                 <Route element={<ProtectedRoute />}>
                     <Route element={<MainComponent />}>
-                        <Route path="/caixa" element={<CaixaPage />} />
+                        <Route path="/caixa" element={<MovimentosPage />} />
                         <Route path="/mais" element={<MaisPage />} />
                         <Route path="/pedidos" element={<PedidosPage />} />
                         <Route path="/produtos" element={<ProdutosPage />} />
